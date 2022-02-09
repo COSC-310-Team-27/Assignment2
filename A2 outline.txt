@@ -1,0 +1,34 @@
+﻿Outline of assignment: 
+1. Individual group members must create public repo for personal project
+2. Create group account -> Create public repo 
+3. Create project plan:
+   1. Brief description of project
+   2. Choose software development cycle for project and brief rationale for choosing said SDLC. (Max one paragraph) 
+   3. List phases of SDLC in point form
+      1. Each phase has at least 3 tasks
+      2. At least two of the tasks have subtasks[a]
+   4. Work breakdown structure with brief explanation
+   5. Gantt chart of tasks and dependencies with brief explanation. 
+   6. Tasks should include: 
+      1. Project meetings 
+      2. Planning documentation
+      3. WBS creation 
+      4. Code documentation 
+      5. Etc
+   7. Limitations of program
+   8. Sample output 
+      1. At least 30turns of dialogue 
+      2. At least two short dialogues to show incompleteness of agent
+4. Be able to use CASE and JIRA tools 
+5. Readme file describing project, how to compile and run code
+   1. Explain how the classes are organized
+6. Clean code
+   1. Class should only have one job
+   2. If method is complicated, provide comments, document it. 
+   3. Good naming convention for classes, variables, etc. 
+7. Project presentation 
+   1. 3-4 min recording of chat bot 
+   2. Highlight best and worst functions
+   3. Overview of contributions (1 min) 
+   4. PM graphs on github (1 min) 
+   5. [a]Ask clarification, in each phase must there be at least two tasks with subtasks or at least on phase where two tasks have subtasks?
