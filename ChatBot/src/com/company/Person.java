@@ -18,12 +18,12 @@ public class Person {
                 '}';
     }
 
-    public Person(String name, int age, String occupation, String hobbies, String problem) {
+    public Person(String name, int age, String occupation, String hobbies, String query) {
         this.name = name;
         this.age = age;
         this.occupation = occupation;
         this.hobbies = hobbies;
-        this.query = problem;
+        this.query = query;
     }
 
     public Person() {
