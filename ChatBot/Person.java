@@ -1,8 +1,8 @@
-package com.company;
+package com.example.chatbot;
 
 public class Person {
     private String name;
-    private int age;
+    private String age;
     private String occupation;
     private String hobbies;
     private String query;
@@ -18,7 +18,7 @@ public class Person {
                 '}';
     }
 
-    public Person(String name, int age, String occupation, String hobbies, String query) {
+    public Person(String name, String age, String occupation, String hobbies, String query) {
         this.name = name;
         this.age = age;
         this.occupation = occupation;
@@ -38,11 +38,11 @@ public class Person {
         this.name = name;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
