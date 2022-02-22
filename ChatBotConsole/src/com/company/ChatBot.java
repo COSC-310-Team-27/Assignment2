@@ -7,7 +7,7 @@ public class ChatBot {
 	private String q2 = "How old are you %s?";
 	private String q3 = "What is your occupation %s?";
 	private String q4 = "What are some of your hobbies and interests %s?";
-	private String q5 = "What can i help you with %s?";
+	private String q5 = "What can I help you with %s?";
 	/* cooking - mahir */
 	private String q6 = "Would you like to see baking or cooking recipes?";
 	private String q7 = "What cuisine is your favourite?";
