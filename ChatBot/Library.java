@@ -13,15 +13,19 @@ public class Library {
         b = new Book("Foundation", "Sci-Fi", "300", "I. Asimov");
         c = new Book("Lord of the Rings", "Fantasy", "300", "J.R. Tolkien");
         d = new Book("Game of Thrones", "Fantasy", "300", "G.R.R. Martin");
-        e = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        f = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        g = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        h = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        i = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        j = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        k = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        l = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        m = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
+
+        e = new Book("1954", "Dystopia", "328", "George Orwell");
+        f = new Book("The Road", "Dystopia", "287", "Cormac McCarthy");
+        g = new Book("A Clockwork Orange", "Dystopia", "192", "Anthony Burgess");
+
+        h = new Book("It", "Horror", "1138", "Stephen King");
+        i = new Book("Frankenstein", "Horror", "280", "Mary Shelley");
+        j = new Book("The Ruins", "Horror", "384", "Scott Smith");
+
+        k = new Book("Harry Potter and the Sorcerer's Stone", "Children's", "223", "J.K. Rowling");
+        l = new Book("Harry Potter and the Chamber of Secrets", "Children's", "251", "J.K. Rowling");
+        m = new Book("Into the Wild", "Children's", "272", "Erin Hunter");
+
         n = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
         o= new Book("Dune", "Sci-Fi", "300", "F. Hebert");
         p= new Book("Dune", "Sci-Fi", "300", "F. Hebert");
