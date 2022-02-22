@@ -8,6 +8,21 @@ public class ChatBot {
 	private String q3 = "What is your occupation %s?";
 	private String q4 = "What are some of your hobbies and interests %s?";
 	private String q5 = "What can i help you with %s?";
+	/* cooking - mahir */
+	private String q6 = "Would you like to see baking or cooking recipes?";
+	private String q7 = "What cuisine is your favourite?";
+	private String q8 = "How experienced are you in the kitchen? (Beginner/Intermediate/Advanced)";
+	private String q9 = "Do you know any famous chef authors?";
+	private String q10 = "What flavour profile suits you best? (Sweet/Savoury/Spicy)";
+	/* humor - mahir */
+	private String q11 = "What type of humor do you enjoy?";
+	private String q12 = "Do you know any famous comedian authors?";
+	private String q13 = "What cuisine is your favourite?";
+	/* art - mahir */
+	private String q14 = "What type of Art do you enjoy?";
+	private String q15 = "Do you know any famous artist authors?";
+	private String q16 = "Do you prefer graphic design?";
+
 	private Person person;
 	private ArrayList<String> actionHobbies = new ArrayList<>(Arrays.asList("climbing, hiking, skiing, paintball, "));
 	private ArrayList<String> nerdOccupations = new ArrayList<>(Arrays.asList("programming", "engineer", "scientist"));
