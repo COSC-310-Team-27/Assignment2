@@ -35,14 +35,15 @@
 
         <EditText
             android:id="@+id/editTxtMessage"
-            android:layout_width="172dp"
-            android:layout_height="62dp"
+            android:layout_width="260dp"
+            android:layout_height="59dp"
+            android:layout_marginBottom="4dp"
             android:ems="10"
             android:hint="message"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.147"
+            app:layout_constraintHorizontal_bias="0.285"
             app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -54,7 +55,7 @@
             android:foregroundGravity="bottom|right"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.688"
+            app:layout_constraintHorizontal_bias="0.952"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@android:drawable/ic_menu_send" />
 

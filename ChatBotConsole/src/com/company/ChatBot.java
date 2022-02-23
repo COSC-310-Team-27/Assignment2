@@ -2,19 +2,67 @@ package com.company;
 import java.util.*;
 
 public class ChatBot {
-	private String greeting = "Hello, my name is chat bot";
-	private String q1 = "What is your name?";
-	private String q2 = "How old are you %s?";
-	private String q3 = "What is your occupation %s?";
-	private String q4 = "What are some of your hobbies and interests %s?";
-	private String q5 = "What can i help you with %s?";
+	private String s1 = "Hello, my name is chat bot";
+	private String s2 = "May I suggest %s";
+	private String q0 = "What is your name?";
+	private String q1 = "How old are you %s?";
+	private String q2 = "What is your occupation %s?";
+	private String q3 = "What is your favorite genera?";
+	private String q4 = "What is your favorite book?";
 	private Person person;
-	private ArrayList<String> actionHobbies = new ArrayList<>(Arrays.asList("climbing, hiking, skiing, paintball, "));
-	private ArrayList<String> nerdOccupations = new ArrayList<>(Arrays.asList("programming", "engineer", "scientist"));
-	public String getQuestion(int i) {
-		if (questions.size() >i ) {
+	private ArrayList<String> statements = new ArrayList<>(Arrays.asList(s1,s2));
+	private ArrayList<String> questions = new ArrayList<>(Arrays.asList(q0,q1,q2,q3,q4));
+	public String getQuestion(int i,String s) {
+		String q = "";
 
-			return questions.get(i);
+		if (questions.size() >i ) {
+			q = questions.get(i);
+			if (q.contains("%s")) {
+				q = String.format(q,s);
+			}
+			return q;
+
+		}
+		else
+			return " Goodbye";
+	}
+	public String getQuestion(int i) {
+		String q = "";
+
+		if (questions.size() >i ) {
+			q = questions.get(i);
+			if (q.contains("%s")) {
+				q = String.format(q,"");
+			}
+			return q;
+
+		}
+		else
+			return " Goodbye";
+	}
+	public String getStatement(int i,String s) {
+		String q = "";
+
+		if (statements.size() >i ) {
+			q = statements.get(i);
+			if (q.contains("%s")) {
+				q = String.format(q,s);
+			}
+			return q;
+
+		}
+		else
+			return " Goodbye";
+	}
+	public String getStatement(int i) {
+		String q = "";
+
+		if (statements.size() >i ) {
+			q = statements.get(i);
+			if (q.contains("%s")) {
+				q = String.format(q,"");
+			}
+			return q;
 
 		}
 		else
@@ -25,7 +73,6 @@ public class ChatBot {
 		this.questions = questions;
 	}
 
-	ArrayList<String> questions = new ArrayList<>(Arrays.asList(q1,q2,q3,q4,q5));
 
 	private ArrayList<Person> people = new ArrayList<>();
 
@@ -33,32 +80,12 @@ public class ChatBot {
 		String out = String.format(question,name);
 		return out;
 	}
-	public String getGreeting() {
-		return this.greeting;
-	}
-	public String getQ1() {
-		return this.q1;
-	}
-	public String getQ2() {
-		return this.q2;
-	}
-	public String getQ3() {
-		return this.q3;
-	}
+
 	public ArrayList<Person> getPeople() {
 		return people;
 	}
-	public String getPeopleString() {
-		return people.toString();
-	}
-	public String findGenera(Person person) {
 
-		if (actionHobbies.contains(person.getHobbies())) {
-			return "action";
-		}
-		if (nerdOccupations.contains(person.getOccupation())) {
-			return "sci-fi";
-		}
-		return " ";
-	}
+
+
+
 }

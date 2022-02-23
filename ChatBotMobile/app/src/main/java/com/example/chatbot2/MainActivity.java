@@ -1,9 +1,12 @@
 package com.example.chatbot2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Rect;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -56,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
         //recyclerView.scrollToPosition(myAdapter.getItemCount());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(myAdapter);
-
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
+        dividerItemDecoration.setDrawable(ContextCompat.getDrawable(MainActivity.this, R.drawable.divider));
+        recyclerView.addItemDecoration(dividerItemDecoration);
 
         images.add(R.drawable.bot);
         names.add("Bot");

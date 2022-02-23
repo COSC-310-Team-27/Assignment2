@@ -4,28 +4,23 @@ public class Person {
     private String name;
     private String age;
     private String occupation;
-    private String hobbies;
+    private String favoriteBook;
+    private String favoriteGenera;
     private String query;
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", occupation='" + occupation + '\'' +
-                ", hobbies='" + hobbies + '\'' +
-                ", query(s)='" + query + '\'' +
-                '}';
+        return super.toString();
     }
 
-    public Person(String name, String age, String occupation, String hobbies, String query) {
+
+    public Person(String name, String age, String occupation, String favoriteBook, String favoriteGenera) {
         this.name = name;
         this.age = age;
         this.occupation = occupation;
-        this.hobbies = hobbies;
-        this.query = query;
+        this.favoriteBook = favoriteBook;
+        this.favoriteGenera = favoriteGenera;
     }
-
     public Person() {
 
     }
@@ -54,19 +49,20 @@ public class Person {
         this.occupation = occupation;
     }
 
-    public String getHobbies() {
-        return hobbies;
+    public String getFavoriteBook() {
+        return favoriteBook;
     }
 
-    public void setHobbies(String hobbies) {
-        this.hobbies = hobbies;
+    public void setFavoriteBook(String favoriteBook) {
+        this.favoriteBook = favoriteBook;
     }
 
-    public String getQuery() {
-        return query;
+    public String getFavoriteGenera() {
+        return favoriteGenera;
     }
 
-    public void setQuery(String query) {
-        this.query = query;
+    public void setFavoriteGenera(String favoriteGenera) {
+        this.favoriteGenera = favoriteGenera;
     }
+
 }
