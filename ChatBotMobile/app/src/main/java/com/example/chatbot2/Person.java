@@ -1,4 +1,4 @@
-package com.example.chatbot;
+package com.example.chatbot2;
 
 public class Person {
     private String name;
