@@ -6,10 +6,6 @@ public class Main {
 
         ChatBot chatBot = new ChatBot();
         Person user1 = new Person();
-        PCA pca = new PCA();
-
-        System.out.println(chatBot.getStatement(0));
-
         System.out.println(chatBot.getQuestion(0));
         Scanner sc = new Scanner(System.in);
         user1.setName(sc.next());
@@ -20,12 +16,6 @@ public class Main {
         System.out.println(chatBot.getQuestion(3, user1.getName()));
         user1.setFavoriteBook(sc.next());
         System.out.println(chatBot.getQuestion(4, user1.getName()));
-        user1.setFavoriteGenera(sc.next());
-
-        pca.setUserVector(new int[]{1,1});
-        System.out.println(chatBot.getStatement(1, pca.book())+" the book");
-        user1.setFavoriteGenera(sc.next());
-        System.out.println(chatBot.getStatement(1, pca.genera())+" the genera");
         user1.setFavoriteGenera(sc.next());
     }
 }
