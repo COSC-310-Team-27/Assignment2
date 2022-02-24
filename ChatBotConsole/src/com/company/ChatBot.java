@@ -2,13 +2,19 @@ package com.company;
 import java.util.*;
 
 public class ChatBot {
-	private String s1 = "Hello, my name is chat bot";
-	private String s2 = "May I suggest %s";
-	private String q0 = "What is your name?";
-	private String q1 = "How old are you %s?";
-	private String q2 = "What is your occupation %s?";
-	private String q3 = "What is your favorite genera?";
-	private String q4 = "What is your favorite book?";
+	private String greeting = "Hello, my name is chat bot";
+	private String q1 = "What is your name?";
+	private String q2 = "How old are you %s?";
+	private String q3 = "What is your occupation %s?";
+	private String q4 = "What are some of your hobbies and interests %s?";
+	private String q5 = "What can i help you with %s?";
+	//If user responds that they like all of the following questions, recommend any of the manga/light novel genre. If they like especially space and mechas and star wars then recommend the one book in manga. 
+	private String q6 = "Do you like comics %s?";
+	private String q7 = "Are you interested in stories of reincarnation %s?";
+	private String q8 = "Do you like reading about mechas or mechanical related materials %s?";
+	private String q9 = "Do you like Star Wars %s?";
+	private String q10 = "Do you like action and fantasy genre %s?";
+	private String q11 = "Do you like books about space %s?";
 	private Person person;
 	private ArrayList<String> statements = new ArrayList<>(Arrays.asList(s1,s2));
 	private ArrayList<String> questions = new ArrayList<>(Arrays.asList(q0,q1,q2,q3,q4));
