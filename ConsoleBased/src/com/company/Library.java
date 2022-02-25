@@ -7,28 +7,22 @@ public class Library {
 
 
 
-        private Book a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p;
-        private ArrayList<Book> bookList = new ArrayList<>(Arrays.asList(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p));
+        //private Book a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p;
+        //private ArrayList<Book> bookList = new ArrayList<>(Arrays.asList(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p));
+        private ArrayList<Book> bookList = new ArrayList<>();
         public Library() {
-        a = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        b = new Book("Foundation", "Sci-Fi", "300", "I. Asimov");
-        c = new Book("Lord of the Rings", "Fantasy", "300", "J.R. Tolkien");
-        d = new Book("Game of Thrones", "Fantasy", "300", "G.R.R. Martin");
-        e = new Book("Odyssey", "classic", "300", "Homer");
-        f = new Book("The Great Gatsby", "classic", "300", "F. Scott Fitzgerald");
-        g = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        h = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        i = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        j = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        k = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        l = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        m = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        n = new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        o= new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-        p= new Book("Dune", "Sci-Fi", "300", "F. Hebert");
-
-
-
+            bookList.add(new Book("Dune", "Sci-Fi", "300", "F. Hebert"));
+            bookList.add(new Book("Foundation", "Sci-Fi", "300", "I. Asimov"));
+            bookList.add(new Book("Lord of the Rings", "Fantasy", "300", "J.R. Tolkien"));
+            bookList.add(new Book("Game of Thrones", "Fantasy", "300", "G.R.R. Martin"));
+            bookList.add(new Book("Odyssey", "classic", "300", "Homer"));
+            bookList.add(new Book("The Great Gatsby", "classic", "300", "F. Scott Fitzgerald"));
+            bookList.add(new Book("Overlord, Vol 1 - The Undead King", "Light novel", "256", "Kugane Maruyama"));
+            bookList.add(new Book("Overlord, Vol 2 - The Dark Warrior", "Light novel", "256", "Kugane Maruyama"));
+            bookList.add(new Book("Overlord, Vol 3 - The Bloody Valkyrie", "Light novel", "288", "Kugane Maruyama"));
+            bookList.add(new Book("Overlord, Vol 4 - The Lizardman Heroes", "Light novel", "304", "Kugane Maruyama"));
+            bookList.add(new Book("Overlord, Vol 5 - The Men Of The Kingdome Part 1", "Light novel", "272", "Kugane Maruyama"));
+            bookList.add(new Book("Overlord, Vol 6 - The Men Of The Kingdome Part 2", "Light novel", "292", "Kugane Maruyama"));
 
     }
 
