@@ -2,7 +2,9 @@ package com.company;
 import java.util.*;
 
 public class ChatBot {
-	private String greeting = "Hello, my name is chat bot";
+	Animals[] animals = new Animal["Rabbit","Owl", "Beaver", "Tiger", "Unicorn"];
+	int animal_Id = (int)(Math.random()* animals.length);
+	private String greeting = "Hello, my I am the Book,concat(animals[animal_Id)])";
 	private String q1 = "What is your name?";
 	private String q2 = "How old are you %s?";
 	private String q3 = "What is your occupation %s?";
