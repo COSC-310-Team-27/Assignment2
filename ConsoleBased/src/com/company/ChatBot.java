@@ -15,14 +15,14 @@ public class ChatBot {
 	private String q2 = "What is your occupation %s?";
 	private String q3 = "What is your favorite genera?";
 	private String q4 = "What is your favorite book?";
+	private String q5 = "What is your favorite genera?";
+	private String q6 = "What is your favorite book?";
 
 	private Person person;
 	private ArrayList<String> statements = new ArrayList<>(Arrays.asList(s1,s2,s3,s4,s5,s6));
-	private ArrayList<String> questions = new ArrayList<>(Arrays.asList(q0,q1,q2,q3,q4,s1,s1));
+	private ArrayList<String> questions = new ArrayList<>(Arrays.asList(q0,q1,q2,q3,q4,q5,q6));
 
 	public String testReaction(String reply, Person user) {
-
-
 
 		if(reply.toLowerCase().contains("no")) {
 			return "no";
