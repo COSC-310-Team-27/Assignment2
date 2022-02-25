@@ -1,13 +1,6 @@
 package com.company;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.*;
-import org.opencv.core.Core;
-import org.opencv.core.CvType;
-import org.opencv.core.Mat;
-import org.opencv.core.MatOfPoint;
-import org.opencv.core.Point;
-import org.opencv.core.Scalar;
+
 
 public class PCA {
     String [] generas = new String[] {"sci-fi","Romance","Action","Comedy", "Education","Classic","Horror"};
@@ -39,13 +32,45 @@ public class PCA {
                 //index is the index of min == index of corresponding string in genera array
                 index = row;
             }
-            System.out.println("Distance"+ row);
-            System.out.println(distances[row]);
+//            System.out.println("Distance"+ row);
+//            System.out.println(distances[row]);
         }
         return distances;
     }
-    public String getTop() {
-        return generas[index];
+
+
+    public int [] getStandardUser() {
+        int [] standard = Arrays.copyOfRange(utility[index],0,utility[index].length);
+        return standard;
+    }
+
+    public String [] getTopThree() {
+
+        int [] indices = new int [] {0,0,0};
+        String [] values = new String [] {"","",""};
+        int row = index;
+        int [] su = getStandardUser();
+        for (int i = 0; i < su.length; i++) {
+            if (su[i]> indices[0]) {
+                values[0] = generas[i];
+                indices[0] = i;
+                //System.out.println("genera 0" + values[0]);
+            }
+            else if (su[i]> indices[1] && su[i] != indices[0]) {
+                System.out.println("1");
+                values[1] = generas[i];
+                indices[1] = i;
+                //System.out.println("genera 1" + values[1]);
+            }
+            else if (su[i]> indices[2] && su[i] != indices[1]) {
+
+                values[2] = generas[i];
+                indices[2] = i;
+                //System.out.println("genera 2" + values[2]);
+            }
+        }
+
+        return values;
     }
 
 }
