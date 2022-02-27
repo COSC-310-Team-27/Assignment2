@@ -7,6 +7,7 @@ public class Book {
         this.title = title;
         this.genre = genre;
         this.author = author;
+
     }
 
     public String getTitle() {
@@ -32,4 +33,13 @@ public class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+    public String toString() {
+        if(genre == "Sci-Fi")
+         return " Genre     title    author\n" +
+                "-------------------------\n " +
+                 genre+"  "+title+" "+author;
+        return null;
+    }
 }
+
