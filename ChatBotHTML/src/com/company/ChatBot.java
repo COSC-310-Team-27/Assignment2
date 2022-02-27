@@ -2,6 +2,7 @@ package com.company;
 import java.util.*;
 
 public class ChatBot {
+	/*
 	private String s1 = "Hello, my name is chat bot";
 	private String s2 = "May I suggest %s";
 	private String s3 = "Can I suggest something in our %s section?";
@@ -21,6 +22,25 @@ public class ChatBot {
 	private Person person;
 	private ArrayList<String> statements = new ArrayList<>(Arrays.asList(s1,s2,s3,s4,s5,s6));
 	private ArrayList<String> questions = new ArrayList<>(Arrays.asList(q0,q1,q2,q3,q4,q5,q6));
+	*/
+	private ArrayList<String> statements = new ArrayList<>();
+	private ArrayList<question> questions = new ArrayList<question>();
+	statements.add("Hello, my name is index");
+	statements.add("May I suggest %s?");
+	statements.add("Can I suggeset someting in our %s section?");
+	statements.add("I'm sorry, maybe you could try %s?");
+	statements.add("Okay, let me find some %s books for you.");
+	statements.add("I'm not sure I understand.");
+	statements.add("Your chosen book(s) have been bookmarked.")
+	statements.add("Do you have any further inquiries?")
+
+	questions.add(new question("generic", 0, "What is your name?"));
+	questions.add(new question("generic", 0, "How old are you %s?"));
+	questions.add(new question("generic", 0, "What is your occupation %s?"));
+	questions.add(new question("generic", 0, "What is your favourite genera?"));
+	questions.add(new question("generic", 0, "What is your favourite book?"));
+
+
 
 	public String testReaction(String reply, Person user) {
 
