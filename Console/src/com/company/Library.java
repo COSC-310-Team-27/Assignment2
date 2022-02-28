@@ -17,6 +17,16 @@ public class Library {
             bookList.add(new Book("Game of Thrones", "Fantasy", "300", "G.R.R. Martin"));
             bookList.add(new Book("Odyssey", "classic", "300", "Homer"));
             bookList.add(new Book("The Great Gatsby", "classic", "300", "F. Scott Fitzgerald"));
+            bookList.add(new Book("The Love Hypothesis", "Romance", "384", "Ali Hazelwood"));
+            bookList.add(new Book("The Fault in Our Stars", "Romance", "313", "John Green"));
+            bookList.add(new Book("Sierra Six", "Action", "528", "Mark Greaney"));
+            bookList.add(new Book("House of Earth and Blood", "Action", "816", "Sarah J. Maas"));
+            bookList.add(new Book("Born a Crime", "Comedy", "304", "Trevor Noah"));
+            bookList.add(new Book("Yearbook", "Comedy", "272", "Seth Rogen"));
+            bookList.add(new Book("The Minimalist Teacher", "Education", "144", "C. Y. Arnold & Tamera Musiowsky-Borneman"));
+            bookList.add(new Book("Ensouling Our Schools: A Universally Designed Framework for Mental Health, Well-Being, and Reconciliation", "Education", "300", "Jennifer Katz & Kevin Lamoureux"));
+            bookList.add(new Book("House of Leaves", "Horror", "709", "Mark Z. Danielewski"));
+            bookList.add(new Book("Dracula", "Horror", "418", "Bram Stoker"));
             bookList.add(new Book("Overlord, Vol 1 - The Undead King", "Light novel", "256", "Kugane Maruyama"));
             bookList.add(new Book("Overlord, Vol 2 - The Dark Warrior", "Light novel", "256", "Kugane Maruyama"));
             bookList.add(new Book("Overlord, Vol 3 - The Bloody Valkyrie", "Light novel", "288", "Kugane Maruyama"));
