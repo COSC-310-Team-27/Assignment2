@@ -30,6 +30,10 @@ public class Main {
         System.out.println(chatBot.getStatement(2, user1.topThree[0]));
         String reply1 = sc.next();
         String perception = chatBot.testReaction(reply1, user1);
+        /*TODO
+            find a way to loop this switch case until user is satisfied
+
+         */
         do {
             switch (perception) {
                 case ("no"): {
