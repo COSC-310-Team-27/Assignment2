@@ -47,7 +47,7 @@ public class ChatBot {
 
 		}
 		else
-			return " Goodbye";
+			return "I can't think of another question";
 	}
 	public String getQuestion(int i) {
 		String q = "";
@@ -61,7 +61,7 @@ public class ChatBot {
 
 		}
 		else
-			return " Goodbye";
+			return "I can't think of another question";
 	}
 	public String getStatement(int i,String s) {
 		String q = "";
@@ -75,7 +75,7 @@ public class ChatBot {
 
 		}
 		else
-			return " Goodbye";
+			return "I can't think of anything else";
 	}
 	public String getStatement(int i) {
 		String q = "";
@@ -89,7 +89,7 @@ public class ChatBot {
 
 		}
 		else
-			return " Goodbye";
+			return "I can't think of anything else";
 	}
 
 	public void setQuestions(ArrayList<String> questions) {
