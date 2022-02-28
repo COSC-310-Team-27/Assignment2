@@ -118,9 +118,9 @@ public class patterns{
   }
   //Default Responses
   private String getRandomResponse(){
-    // generate random numbers within 1 to 10
-    int max = 10;
-    int randNum = (int)(Math.random() * max);
+    // generate random numbers within 0 to 10
+    int max = 11;
+    int randNum = Math.floor((Math.random() * max)); 
 
     return switch (randNum) {
       case 0 -> " There are around 130 million published books.";
