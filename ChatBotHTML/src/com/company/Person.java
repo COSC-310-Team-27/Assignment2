@@ -6,7 +6,41 @@ public class Person {
     private String occupation;
     private String favoriteBook;
     private String favoriteGenera;
-    private String query;
+    private int [] pcaVector;
+    String [] generas = new String[] {"sci-fi","Romance","Action","Comedy", "Education","Classic","Horror"};
+    String [] topThree;
+    private int [] userVector = new int[generas.length];
+
+    public String[] getTopThree() {
+        return topThree;
+    }
+
+    public void setTopThree(String[] topThree) {
+        this.topThree = topThree;
+    }
+
+    public int[] getUserVector() {
+        return userVector;
+    }
+
+    public void setUserVector() {
+        for (int i = 0; i<generas.length; i++) {
+            if (favoriteGenera.equalsIgnoreCase(generas[i])) {
+                userVector[i] = 10;
+            }
+            else {
+                userVector[i] = 0;
+            }
+        }
+    }
+
+    public int[] getPcaVector() {
+        return pcaVector;
+    }
+
+    public void setPcaVector(int[] pcaVector) {
+        this.pcaVector = pcaVector;
+    }
 
     @Override
     public String toString() {
