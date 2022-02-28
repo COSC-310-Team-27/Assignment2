@@ -25,20 +25,6 @@ public class ChatBot {
 	*/
 	private ArrayList<String> statements = new ArrayList<>();
 	private ArrayList<question> questions = new ArrayList<question>();
-	statements.add("Hello, my name is index");
-	statements.add("May I suggest %s?");
-	statements.add("Can I suggeset someting in our %s section?");
-	statements.add("I'm sorry, maybe you could try %s?");
-	statements.add("Okay, let me find some %s books for you.");
-	statements.add("I'm not sure I understand.");
-	statements.add("Your chosen book(s) have been bookmarked.")
-	statements.add("Do you have any further inquiries?")
-
-	questions.add(new question("generic", 0, "What is your name?"));
-	questions.add(new question("generic", 0, "How old are you %s?"));
-	questions.add(new question("generic", 0, "What is your occupation %s?"));
-	questions.add(new question("generic", 0, "What is your favourite genera?"));
-	questions.add(new question("generic", 0, "What is your favourite book?"));
 
 
 
@@ -59,7 +45,7 @@ public class ChatBot {
 		String q = "";
 
 		if (questions.size() >i ) {
-			q = questions.get(i);
+			q = questions.get(i).content;
 			if (q.contains("%s")) {
 				q = String.format(q,s);
 			}
@@ -73,7 +59,7 @@ public class ChatBot {
 		String q = "";
 
 		if (questions.size() >i ) {
-			q = questions.get(i);
+			q = questions.get(i).content;
 			if (q.contains("%s")) {
 				q = String.format(q,"");
 			}
@@ -112,8 +98,20 @@ public class ChatBot {
 			return " Goodbye";
 	}
 
-	public void setQuestions(ArrayList<String> questions) {
-		this.questions = questions;
+	public void setQuestions() {
+		statements.add("Hello, my name is index");
+		statements.add("May I suggest %s?");
+		statements.add("Can I suggest something in our %s section?");
+		statements.add("I'm sorry, maybe you could try %s?");
+		statements.add("Okay, let me find some %s books for you.");
+		statements.add("I'm not sure I understand.");
+		statements.add("Your chosen book(s) have been bookmarked.");
+		statements.add("Do you have any further inquiries?");
+		questions.add(new question("generic", 0, "What is your name?"));
+		questions.add(new question("generic", 0, "How old are you %s?"));
+		questions.add(new question("generic", 0, "What is your occupation %s?"));
+		questions.add(new question("generic", 0, "What is your favourite genera?"));
+		questions.add(new question("generic", 0, "What is your favourite book?"));
 	}
 
 
@@ -132,3 +130,4 @@ public class ChatBot {
 
 
 }
+
