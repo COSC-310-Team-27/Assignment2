@@ -60,8 +60,6 @@ public class patterns{
   }
 
 //Book information
-
-
   public boolean getGenreType(String sentence) {
     String response = sentence;
     if (findKeyword(response, "scifi") >= 0 || findKeyword(response, "science fiction") >= 0 ||
@@ -70,7 +68,79 @@ public class patterns{
             findKeyword(response, "skiffy") >= 0) {
 
     }
+    if (findKeyword(response, "action") >= 0 || findKeyword(response, "fast-faced") >= 0 ||
+            findKeyword(response, "adventure") >= 0 || findKeyword(response, "adventure book") >= 0 ||
+            findKeyword(response, "adventure-book") >= 0 || findKeyword(response, "Thriller") >= 0 ||
+            findKeyword(response, "Triller") >= 0) {
+
+    }
+    if (findKeyword(response, "fantasy") >= 0 || findKeyword(response, "daydream") >= 0 ||
+            findKeyword(response, "fancy") >= 0 || findKeyword(response, "figment") >= 0 ||
+            findKeyword(response, "phantasma") >= 0 || findKeyword(response, "reverie") >= 0 ||
+            findKeyword(response, "vision") >= 0) {
+    }
+    if (findKeyword(response, "horror") >= 0 || findKeyword(response, "terror") >= 0 ||
+            findKeyword(response, "panic") >= 0 || findKeyword(response, "dread") >= 0 ||
+            findKeyword(response, "chiller") >= 0 || findKeyword(response, "alarm") >= 0 ||
+            findKeyword(response, "hate") >= 0) {
+    }
+    if (findKeyword(response, "mystery") >= 0 || findKeyword(response, "detective") >= 0 ||
+            findKeyword(response, "puzzle") >= 0 || findKeyword(response, "riddle") >= 0 ||
+            findKeyword(response, "secret") >= 0 || findKeyword(response, "conundrum") >= 0 ||
+            findKeyword(response, "head-scratcher") >= 0) {
+
+    }
+    if (findKeyword(response, "romance") >= 0 || findKeyword(response, "intrigue") >= 0 ||
+            findKeyword(response, "infatuation") >= 0 || findKeyword(response, "entanglement") >= 0 ||
+            findKeyword(response, "passion") >= 0 || findKeyword(response, "puppy love") >= 0 ||
+            findKeyword(response, "hanky-panky") >= 0) {
+
+    }
+    if (findKeyword(response, "children") >= 0 || findKeyword(response, "kids") >= 0 ||
+            findKeyword(response, "child") >= 0 || findKeyword(response, "kid") >= 0 ||
+            findKeyword(response, "youngsters") >= 0 || findKeyword(response, "youth") >= 0 ||
+            findKeyword(response, "squirts") >= 0) {
+
+    }
+    if (findKeyword(response, "comedy") >= 0 || findKeyword(response, "humor") >= 0 ||
+            findKeyword(response, "parody") >= 0 || findKeyword(response, "fun") >= 0 ||
+            findKeyword(response, "laughter") >= 0 || findKeyword(response, "humerousness") >= 0 ||
+            findKeyword(response, "whimsicality") >= 0) {
+
+    }
+    if (findKeyword(response, "western") >= 0 || findKeyword(response, "cowboy") >= 0 ||
+            findKeyword(response, "oat opera") >= 0 || findKeyword(response, "shoot-em-up") >= 0 ||
+            findKeyword(response, "shoot em up") >= 0 || findKeyword(response, "Native Americans") >= 0 ||
+            findKeyword(response, "ranches") >= 0) {
+
+    }
+    if (findKeyword(response, "history") >= 0 || findKeyword(response, "past") >= 0 ||
+            findKeyword(response, "yesteryear") >= 0 || findKeyword(response, "days of old") >= 0 ||
+            findKeyword(response, "old days") >= 0 || findKeyword(response, "good old days") >= 0 ||
+            findKeyword(response, "olden days") >= 0) {
+
+    }
+    if (findKeyword(response, "journalism") >= 0 || findKeyword(response, "news") >= 0 ||
+            findKeyword(response, "reporting") >= 0 || findKeyword(response, "press") >= 0 ||
+            findKeyword(response, "broadcast") >= 0 || findKeyword(response, "the fourth estate") >= 0 ||
+            findKeyword(response, "the press") >= 0) {
+
+    }
+    if (findKeyword(response, "philosopht") >= 0 || findKeyword(response, "phosopy") >= 0 ||
+            findKeyword(response, "phylosophty") >= 0 || findKeyword(response, "phlosophy") >= 0 ||
+            findKeyword(response, "phalosophy") >= 0 || findKeyword(response, "system") >= 0 ||
+            findKeyword(response, "school of thought") >= 0) {
+
+    }
+    if (findKeyword(response, "philosopht") >= 0 || findKeyword(response, "phosopy") >= 0 ||
+            findKeyword(response, "phylosophty") >= 0 || findKeyword(response, "phlosophy") >= 0 ||
+            findKeyword(response, "phalosophy") >= 0 || findKeyword(response, "system") >= 0 ||
+            findKeyword(response, "school of thought") >= 0) {
+
+    }
+    Book bk = new Book();
     System.out.print("");
+
     return false;
   }
      /*

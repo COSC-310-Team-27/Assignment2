@@ -6,7 +6,13 @@ public class Main {
 
 
     public static void main(String[] args) {
-
+        Scanner sc = new Scanner(System.in);
+        pca reduce = new pca();
+        patterns p1 = new patterns();
+        String w1 = p1.getWelcome();
+        String i1 = p1.getIntro();
+        ChatBot chatBot = new ChatBot();
+        Person user1 = new Person();
 
 
         System.out.println(w1);
