@@ -1,7 +1,8 @@
 package com.company;
 
 public class Book {
-    private String title, genre, author, pages;
+    private String title, genre, author;
+    private int pages;
     private Library lib;
 
     public Book(){
@@ -18,11 +19,11 @@ public class Book {
         }
     }
 
-    public Book(String title, String genre,  String author, String pages) {
+    public Book(String title, String genre, int pages, String author) {
         this.title = title;
         this.genre = genre;
-        this.author = author;
         this.pages = pages;
+        this.author = author;
     }
 
     public String getTitle() {

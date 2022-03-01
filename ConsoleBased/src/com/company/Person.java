@@ -1,4 +1,5 @@
 package com.company;
+import java.util.*;
 
 public class Person {
     private String name;
@@ -7,6 +8,10 @@ public class Person {
     private String favoriteBook;
     private String favoriteGenera;
     private String query;
+    private ArrayList<Book> tempList = new ArrayList<Book>();
+    private ArrayList<Book> permList = new ArrayList<Book>();
+
+
 
     @Override
     public String toString() {
@@ -63,6 +68,16 @@ public class Person {
 
     public void setFavoriteGenera(String favoriteGenera) {
         this.favoriteGenera = favoriteGenera;
+    }
+
+    public void setTempList(){
+
+    }
+    public void updateTempList(){
+
+    }
+    public void updatePermList(){
+
     }
 
 }
