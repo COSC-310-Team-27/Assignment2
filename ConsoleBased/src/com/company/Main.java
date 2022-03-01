@@ -6,6 +6,7 @@ public class Main {
 
         ChatBot chatBot = new ChatBot();
         Person user1 = new Person();
+        System.out.println(chatBot.getStatement(0));
         System.out.println(chatBot.getQuestion(0));
         Scanner sc = new Scanner(System.in);
         user1.setName(sc.next());

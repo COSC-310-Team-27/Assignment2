@@ -7,10 +7,13 @@ public class Library {
 
 
     //private Book a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z;
-    private tempB a;
+    //private tempB a;
     //private ArrayList<Book> bookList = new ArrayList<>(Arrays.asList(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p));
     private ArrayList<Book> bookList = new ArrayList<>();
     public Library() {
+        //Add books by arraylist as new objects of type book, option 1:
+        //Option 2, create 2D array where each row would be a unique genre/section/category.
+        //Option 3, create arrays/arraylists for each genre.
         bookList.add(new Book("Dune", "Sci-Fi", "300", "F. Hebert"));
         bookList.add(new Book("Foundation", "Sci-Fi", "300", "I. Asimov"));
         bookList.add(new Book("Lord of the Rings", "Fantasy", "300", "J.R. Tolkien"));
@@ -53,3 +56,4 @@ public class Library {
         bookList.add(new Book(title,genre,pages,author));
         return true;
     }
+}
