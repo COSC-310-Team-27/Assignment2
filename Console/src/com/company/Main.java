@@ -7,6 +7,18 @@ public class Main {
 
     public static void main(String[] args) {
 
+
+
+        System.out.println(w1);
+        user1.setName(sc.next());
+        System.out.println(user1.getName() + i1);
+        String s1 = sc.next();
+        System.out.println( user1.getName() + p1.getLit(s1));
+        String s2 = sc.next();
+        System.out.println( user1.getName() + p1.getGenre(s2));
+        String s3 = sc.next();
+        user1.setFavoriteBook(sc.next());
+/*
         ChatBot chatBot = new ChatBot();
         Person user1 = new Person();
         System.out.println(chatBot.getStatement(0));
@@ -25,7 +37,7 @@ public class Main {
         user1.setUserVector();
         user1.setPcaVector(pca.getStandardUser());
         user1.setTopThree(pca.getTopThree());
-
+*/
 
         System.out.println(chatBot.getStatement(2, user1.topThree[0]));
         String reply1 = sc.next();
