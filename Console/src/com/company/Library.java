@@ -18,6 +18,7 @@ public class Library {
             bookList.add(new Book("Overlord, Vol 4 - The Lizardman Heroes", "Light novel",  "Kugane Maruyama"));
             bookList.add(new Book("Overlord, Vol 5 - The Men Of The Kingdome Part 1", "Light novel","Kugane Maruyama"));
             bookList.add(new Book("Overlord, Vol 6 - The Men Of The Kingdome Part 2", "Light novel", "Kugane Maruyama"));
+            bookList.add(new Book("monty python", "comedy", "person"));
 
     }
 
@@ -32,25 +33,32 @@ public class Library {
         return true;
     }
 
-    public ArrayList<Book> getGeneras(String genera) {
+    public ArrayList<Book> getGeneraList(String genera) {
         ArrayList<Book> generaList = new ArrayList<>();
+        bookList = getBookList();
         for (Book b:bookList) {
-            if(b.getGenre().equalsIgnoreCase(genera));
+            if(b.getGenre() == genera) {
+                //System.out.println("match"+b.getGenre());
                 generaList.add(b);
+            }
+
         }
+        //System.out.println(generaList);
         return  generaList;
     }
-    public ArrayList<Book> getAuthors(String author) {
+    public ArrayList<Book> getAuthorList(String author) {
         ArrayList<Book> authorList = new ArrayList<>();
         for (Book b:bookList) {
-            if(b.getGenre().equalsIgnoreCase(author));
-            authorList.add(b);
+            if(b.getAuthor() == author)
+            {
+                authorList.add(b);
+            }
         }
         return  authorList;
     }
-    public ArrayList<String> getAuthorList(ArrayList<Book> books) {
+    public ArrayList<String> getAllAuthors() {
         ArrayList<String> authors = new ArrayList<>();
-        for (Book book :books) {
+        for (Book book :bookList) {
             authors.add(book.getAuthor());
         }
         return authors;
@@ -64,9 +72,21 @@ public class Library {
         return titles;
     }
     public Book getGeneraRand(String genera) {
-        ArrayList<Book> generaList = getGeneras(genera);
+        ArrayList<Book> generaList = getGeneraList(genera);
         int randNum = (int)(Math.random() * generaList.size());
-        Book rand = generaList.get(randNum);
+        Book rand = new Book();
+        if (generaList.size()>0) {
+            rand = generaList.get(randNum);
+        }
+        return rand;
+    }
+    public Book getAuthRand(String author) {
+        ArrayList<Book> authorList = getAuthorList(author);
+        int randNum = (int) (Math.random() * authorList.size());
+        Book rand = new Book();
+        if (authorList.size() > 0) {
+            rand = authorList.get(randNum);
+        }
         return rand;
     }
     public Book getTitleRandom() {

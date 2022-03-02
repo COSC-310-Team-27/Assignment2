@@ -10,8 +10,19 @@ public class Main {
 
 
         Parse parse = new Parse();
-
         Library library = new Library();
+        ArrayList<Book> books_in_genera = new ArrayList<>();
+        ArrayList<Book> books_in_author = new ArrayList<>();
+        books_in_genera = library.getGeneraList("sci-fi");
+        books_in_author = library.getAuthorList("F. Hebert");
+
+        Book randG1 = library.getGeneraRand("sci-fi");
+        System.out.println("random of this genera: " +randG1);
+        Book randG2 = library.getGeneraRand("comedy");
+        System.out.println("random of this genera: " +randG2);
+        //System.out.println(books_in_author);
+
+        //F. Hebert
         ChatBot chatBot = new ChatBot();
         Person user1 = new Person();
         System.out.println(chatBot.getStatement(0));
@@ -26,7 +37,6 @@ public class Main {
         user1.setFavoriteBook(sc.next());
         System.out.println(chatBot.getQuestion(4, user1.getName()));
         user1.setFavoriteGenera(sc.next());
-
         PCA pca = new PCA(user1.getUserVector()); //create pca object using user1 person object
         user1.setUserVector();
         user1.setPcaVector(pca.getStandardUser());
@@ -34,15 +44,13 @@ public class Main {
         //System.out.println(chatBot.getStatement(2, user1.topThree[0]));
 
         //ArrayList<Book> generaMatch = library.getGeneras(user1.topThree[0]);
-        System.out.println("best genera"+ user1.topThree[0]);
-
+        System.out.println("best genera "+ user1.topThree[0]);
+        System.out.println(user1.topThree[2]+" "+ user1.topThree[2]);
 
         String reply1 = sc.next();
         String perception = chatBot.testReaction(reply1, user1);
-        /*TODO
-            find a way to loop this switch case until user is satisfied
 
-         */
+
         do {
             switch (perception) {
                 case ("no"): {
@@ -59,7 +67,6 @@ public class Main {
             reply1 = sc.next();
             perception = chatBot.testReaction(reply1, user1);
         }while (perception != "yes");
-
 
 
     }
