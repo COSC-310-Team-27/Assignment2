@@ -46,32 +46,47 @@ public class PCA {
         return standard;
     }
 
-    public String [] getTopThree() {
+    public ArrayList<String> getTopThree() {
 
         int [] indices = new int [] {0,0,0};
-        String [] values = new String [] {"","",""};
+        ArrayList<String> values = new ArrayList<>();
         int row = index;
         int [] su = getStandardUser();
         for (int i = 0; i < su.length; i++) {
             if (su[i]> indices[0]) {
-                values[0] = generas[i];
+                values.add(generas[i]);
                 indices[0] = i;
                 //System.out.println("genera 0" + values[0]);
             }
             else if (su[i]> indices[1] && su[i] != indices[0]) {
-                System.out.println("1");
-                values[1] = generas[i];
+                values.add(generas[i]);
                 indices[1] = i;
                 //System.out.println("genera 1" + values[1]);
             }
             else if (su[i]> indices[2] && su[i] != indices[1]) {
 
-                values[2] = generas[i];
+                values.add(generas[i]);
                 indices[2] = i;
                 //System.out.println("genera 2" + values[2]);
             }
         }
         return values;
+    }
+    public ArrayList<String> remainingOptions(ArrayList<String> top3) {
+
+        ArrayList<String> remaining = new ArrayList<>();
+        for (String g:generas) {
+            boolean add = true;
+            for (String s: top3) {
+                if(s==g){
+                    add = false;
+                }
+            }
+            if(add) {
+                remaining.add(g);
+            }
+        }
+        return remaining;
     }
 
 }
