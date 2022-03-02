@@ -40,9 +40,48 @@ public class Library {
         }
         return  generaList;
     }
+    public ArrayList<Book> getAuthors(String author) {
+        ArrayList<Book> authorList = new ArrayList<>();
+        for (Book b:bookList) {
+            if(b.getGenre().equalsIgnoreCase(author));
+            authorList.add(b);
+        }
+        return  authorList;
+    }
+    public ArrayList<String> getAuthorList(ArrayList<Book> books) {
+        ArrayList<String> authors = new ArrayList<>();
+        for (Book book :books) {
+            authors.add(book.getAuthor());
+        }
+        return authors;
+    }
+
+    public ArrayList<String> getTitleList(ArrayList<Book> books) {
+        ArrayList<String> titles = new ArrayList<>();
+        for (Book book :books) {
+            titles.add(book.getAuthor());
+        }
+        return titles;
+    }
+    public Book getGeneraRand(String genera) {
+        ArrayList<Book> generaList = getGeneras(genera);
+        int randNum = (int)(Math.random() * generaList.size());
+        Book rand = generaList.get(randNum);
+        return rand;
+    }
+    public Book getTitleRandom() {
+        int randNum = (int)(Math.random() * bookList.size());
+        Book rand = bookList.get(randNum);
+        return rand;
+    }
+    public Book getTitleRandom(ArrayList<Book> books) {
+        int randNum = (int)(Math.random() * books.size());
+        Book rand = books.get(randNum);
+        return rand;
+    }
+
+
 }
 
-//TODO getBook()
-//  getName(s)()
-// getAuthors(s)()
+
 
