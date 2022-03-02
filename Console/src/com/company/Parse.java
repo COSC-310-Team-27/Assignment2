@@ -1,7 +1,9 @@
 package com.company;
 
+import java.lang.reflect.Type;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Parse {
@@ -41,4 +43,33 @@ public class Parse {
         System.out.println(value);
         return value;
     }
+    public ArrayList<String> getStringArray() {
+        ArrayList<String> list = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+        boolean reading = true;
+        while (sc.hasNext() &&  reading) {
+            String token = sc.nextLine();
+            String [] line = token.split(" ");
+            if(token.equalsIgnoreCase("exit")||token.contains("."));
+                reading = false;
+            System.out.println(token);
+            for (String s:line) {
+                list.add(s);
+            }
+        }
+        System.out.println(list);
+
+        return list;
+
+    }
+    public String getWord() {
+        Scanner sc = new Scanner(System.in);
+        String word = sc.next();
+        return word;
+    }
+    public String getNoun(ArrayList<String> list) {
+
+        return null;
+    }
+
 }

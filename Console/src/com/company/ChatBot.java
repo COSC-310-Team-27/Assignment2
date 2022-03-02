@@ -108,7 +108,4 @@ public class ChatBot {
 		return people;
 	}
 
-
-
-
 }

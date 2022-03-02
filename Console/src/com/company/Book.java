@@ -3,10 +3,22 @@ package com.company;
 public class Book {
     private String title, genre, author;
 
-    public Book(String title, String genre, String pages, String author) {
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", genre='" + genre + '\'' +
+                ", author='" + author + '\'' +
+                '}';
+    }
+
+    public Book(String title, String genre, String author) {
         this.title = title;
         this.genre = genre;
         this.author = author;
+    }
+    public Book() {
+
     }
 
     public String getTitle() {
