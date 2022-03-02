@@ -10,18 +10,17 @@ public class PCA {
      normalise / mean center the utility and user data
      */
     int [][] utility = new int [][] {{10,1,10,0,5,2,2},{0,10,1,10,5,2,2},{0,1,1,0,10,10,2},{8,1,1,1,5,4,8}};//standard user matrix reduced via PCA in python
-
     int[] user;
     int [] distances = new int[utility.length];
     int index = 0;
     int value = 1000;
-    //ArrayList<Integer> dist = new ArrayList(Arrays.asList( distances));
+
     public PCA(int[] user) {
         this.user = user;
     }
 
-    //function finds the standard user vector that is closest using euclidian distance
-    //the smallest distance gives a column vector that can be used to recommend geners
+    //function finds the standard user vector that is closest using euclidean distance
+    //the smallest distance gives a column vector that can be used to recommend generas
     public int [] getDistances(int [] user, int [][]utility) {
         for (int row = 0; row < utility.length; ++row)
         {
