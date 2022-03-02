@@ -11,18 +11,6 @@ public class Main {
 
         Parse parse = new Parse();
         Library library = new Library();
-        ArrayList<Book> books_in_genera = new ArrayList<>();
-        ArrayList<Book> books_in_author = new ArrayList<>();
-        books_in_genera = library.getGeneraList("sci-fi");
-        books_in_author = library.getAuthorList("F. Hebert");
-
-        Book randG1 = library.getGeneraRand("sci-fi");
-        System.out.println("random of this genera: " +randG1);
-        Book randG2 = library.getGeneraRand("comedy");
-        System.out.println("random of this genera: " +randG2);
-        //System.out.println(books_in_author);
-
-        //F. Hebert
         ChatBot chatBot = new ChatBot();
         Person user1 = new Person();
         System.out.println(chatBot.getStatement(0));
@@ -41,33 +29,33 @@ public class Main {
         user1.setUserVector();
         user1.setPcaVector(pca.getStandardUser());
         user1.setTopThree(pca.getTopThree());
-        //System.out.println(chatBot.getStatement(2, user1.topThree[0]));
-
-        //ArrayList<Book> generaMatch = library.getGeneras(user1.topThree[0]);
-        System.out.println("best genera "+ user1.topThree[0]);
-        System.out.println(user1.topThree[2]+" "+ user1.topThree[2]);
-
-        String reply1 = sc.next();
-        String perception = chatBot.testReaction(reply1, user1);
-
-
+        int x = 0;
+        boolean loop = true;
         do {
-            switch (perception) {
-                case ("no"): {
-                    System.out.println(chatBot.getStatement(3, user1.topThree[1]));
-                }
-                case ("yes"): {
-                    System.out.println(chatBot.getStatement(4, user1.topThree[0]));
-                }
-                case ("unsure"): {
-                    System.out.println(chatBot.getStatement(5, user1.topThree[0]));
-                }
+            if(x<=user1.topThree.length) {
+
+                System.out.println("Can i suggest " + user1.topThree[x] + " ?");
+                String reply1 = sc.next();
+                loop = chatBot.testReaction(reply1);
             }
+            else {
+                loop = false;
+            }
+        }while(loop);
 
-            reply1 = sc.next();
-            perception = chatBot.testReaction(reply1, user1);
-        }while (perception != "yes");
+        x = 0;
+        loop = true;
+        do {
+            if(x<=user1.topThree.length) {
 
+                System.out.println("Can i suggest " + user1.topThree[x] + " ?");
+                String reply1 = sc.next();
+                loop = chatBot.testReaction(reply1);
+            }
+            else {
+                loop = false;
+            }
+        }while(loop);
 
     }
 
