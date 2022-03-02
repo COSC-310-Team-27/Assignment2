@@ -5,17 +5,14 @@ import java.text.ParseException;
 import java.util.*;
 public class Main {
 
-
     public static void main(String[] args) throws ParseException {
-
-
+        Scanner sc = new Scanner(System.in);
         Parse parse = new Parse();
         Library library = new Library();
         ChatBot chatBot = new ChatBot();
         Person user1 = new Person();
         System.out.println(chatBot.getStatement(0));
         System.out.println(chatBot.getQuestion(0));
-        Scanner sc = new Scanner(System.in);
         user1.setName(parse.getWord());
         System.out.println(chatBot.getQuestion(1, user1.getName()));
         user1.setAge(parse.getWord());
@@ -29,34 +26,7 @@ public class Main {
         user1.setUserVector();
         user1.setPcaVector(pca.getStandardUser());
         user1.setTopThree(pca.getTopThree());
-        int x = 0;
-        boolean loop = true;
-        do {
-            if(x<=user1.topThree.length) {
-
-                System.out.println("Can i suggest " + user1.topThree[x] + " ?");
-                String reply1 = sc.next();
-                loop = chatBot.testReaction(reply1);
-            }
-            else {
-                loop = false;
-            }
-        }while(loop);
-
-        x = 0;
-        loop = true;
-        do {
-            if(x<=user1.topThree.length) {
-
-                System.out.println("Can i suggest " + user1.topThree[x] + " ?");
-                String reply1 = sc.next();
-                loop = chatBot.testReaction(reply1);
-            }
-            else {
-                loop = false;
-            }
-        }while(loop);
-
+        chatBot.loopGeneraTitle(user1,pca,pca.getTopThree(), false);
     }
 
 }

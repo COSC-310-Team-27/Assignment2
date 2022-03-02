@@ -2,7 +2,7 @@ package com.company;
 import java.util.*;
 
 public class ChatBot {
-	private String s1 = "Hello, my name is chat bot";
+/*	private String s1 = "Hello, my name is chat bot";
 	private String s2 = "May I suggest %s";
 	private String s3 = "Can I suggest something in our %s section?";
 
@@ -16,8 +16,13 @@ public class ChatBot {
 	private String q3 = "What is your favorite genera?";
 	private String q4 = "What is your favorite book?";
 	private String q5 = "What is your favorite genera?";
-	private String q6 = "What is your favorite book?";
-
+	private String q6 = "What is your favorite book?";*/
+	Library library = new Library();
+	private String p1 = "yes";
+	private String p2 = "yeah";
+	private String p3 = "yep";
+	private String p4 = "yeet";
+	private ArrayList<String> positiveFeedBack = new ArrayList<>();
 	private Person person;
 	private ArrayList<String> statements = new ArrayList<>();
 	private ArrayList<question> questions = new ArrayList<>();
@@ -47,21 +52,41 @@ public class ChatBot {
 		//questions.add(new question("generic", 0, "What service can I provide? "));  //considering to add two more elements, two to indicate the statement(s) index(s)
 		questions.add(new question("loop", 0, "What should I base my recommendation on? "));
 		questions.add(new question("loop", 1, "Would you require additional service?"));
+		positiveFeedBack.add(p1);
+		positiveFeedBack.add(p2);
+		positiveFeedBack.add(p3);
+		positiveFeedBack.add(p4);
 
 	}
 	public boolean testReaction(String reply) {
-		boolean loop = true;
-		ArrayList<String> positiveBranch = new ArrayList<>();
-		positiveBranch.add("yes");
-		positiveBranch.add("yeah");
-		positiveBranch.add("for sure");
-		for (String s:positiveBranch) {
+		boolean happy = false;
+		for (String s:positiveFeedBack) {
 			if(s.contains(reply.toLowerCase())||reply.contains(s.toLowerCase())) {
-				loop = false;
+				happy = true;
 			}
 		}
-		return loop;
+		return happy;
 	}
+
+	public void loopGeneraTitle(Person person,PCA pca, ArrayList<String> suggest,boolean last) {
+
+		Scanner sc = new Scanner(System.in);
+		boolean happy = false;
+		for (String s: suggest) {
+			System.out.println("Can i suggest " + s + " ?");
+			String reply = sc.next();
+			happy = testReaction(reply);
+			if(happy) {
+				System.out.print("That's great, are these books of any interest? \n"
+						+ library.listString(library.getGeneraList(s)));
+			}
+		}
+		if(!happy) {
+			ArrayList<String> finalOption = pca.remainingOptions(person.getTopThree());
+			loopGeneraTitle(person,pca,finalOption,true);
+		}
+	}
+
 	public String getQuestion(int i,String s) {
 		String q = "";
 

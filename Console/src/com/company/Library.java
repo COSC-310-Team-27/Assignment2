@@ -115,6 +115,8 @@ public class Library {
         Book rand = books.get(randNum);
         return rand;
     }
+
+
     public boolean addBook(String title, String genre, int pages, String author) {
         bookList.add(new Book(title,genre,pages,author));
         return true;
@@ -123,6 +125,13 @@ public class Library {
     //To string sucks so I'm using this
     public String getBookDetails(int i){
         return "Title: " + bookList.get(i).getTitle() + "\t\tGenre: " + bookList.get(i).getGenre() + "\t\tAuthor: " + bookList.get(i).getAuthor();
+    }
+    public String listString(ArrayList<Book> books)  {
+            String bookString = "";
+        for (Book b:books) {
+            bookString += b.getTitle() + " \n";
+        }
+        return bookString;
     }
 
 }
