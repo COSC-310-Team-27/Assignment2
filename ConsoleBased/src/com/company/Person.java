@@ -70,14 +70,25 @@ public class Person {
         this.favoriteGenera = favoriteGenera;
     }
 
-    public void setTempList(){
-
+    public void updateTempList(Book b){
+        tempList.add(b);
     }
-    public void updateTempList(){
-
+    public void removeTempList(Book b){
+        for (int i = 0; i < tempList.size(); i++) {
+            if(tempList.get(i).getTitle().equalsIgnoreCase(b.getTitle())){
+                tempList.remove(i);
+            }
+        }
     }
-    public void updatePermList(){
-
+    public void updatePermList(Book b){
+        permList.add(b);
+    }
+    public void removePermList(Book b){
+        for (int i = 0; i < permList.size(); i++) {
+            if(permList.get(i).getTitle().equalsIgnoreCase(b.getTitle())){
+                permList.remove(i);
+            }
+        }
     }
 
 }

@@ -57,7 +57,9 @@ public class Library {
         bookList.add(new Book(title,genre,pages,author));
         return true;
     }
+    /* To string exists
     public String getBookDetails(int i){
         return "Title: " + bookList.get(i).getTitle() + "\tGenre: " + bookList.get(i).getGenre() + "\tAuthor" ;
     }
+    */
 }

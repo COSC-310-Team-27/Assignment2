@@ -8,6 +8,7 @@ public class Main {
         Person user1 = new Person();
         Library lib = new Library();
         Scanner sc = new Scanner(System.in);
+        int gate = 1;
         String in = "";
 
         System.out.println(chatBot.getStatement(0));
@@ -23,28 +24,47 @@ public class Main {
         user1.setFavoriteGenera(sc.next());
         System.out.println(chatBot.getQuestion(5, user1.getName()));
         in = sc.next();
-        if(in.substring(0, 6).equalsIgnoreCase("random")){
+        System.out.println("inting: "+ in);
+
+        while(gate == 1){
+            System.out.println("1");
+            if(in.equalsIgnoreCase("random")){
+                System.out.println("random");
+            }
+            else if(in.equalsIgnoreCase("favourite book")){
+                System.out.println("fav b");
+            }
+            else if(in.equalsIgnoreCase("favourite genre")){
+                System.out.println("fav g");
+
+            }
+            else if(in.equalsIgnoreCase("title")){
+                System.out.println("title");
+
+            }
+            else if(in.equalsIgnoreCase("pages")){
+                System.out.println("pages");
+            }
+            else if(in.equalsIgnoreCase("author")){
+                System.out.println("author");
+            }
+            else{
+                System.out.println("Service unavailable");
+
+            }
+            System.out.println(chatBot.getQuestion(6, user1.getName()));
+            in = sc.next();
+            System.out.println("in: "+ in);
+            if(in.equalsIgnoreCase("yes")){
+                continue;
+            }
+            else{
+                gate = 0;
+            }
 
         }
-        else if(in.equalsIgnoreCase("favourite book")){
 
-        }
-        else if(in.equalsIgnoreCase("favourite genre")){
 
-        }
-        else if(in.equalsIgnoreCase("title")){
-
-        }
-        else if(in.equalsIgnoreCase("pages")){
-
-        }
-        else if(in.equalsIgnoreCase("author")){
-
-        }
-        else{
-            System.out.println("Service unavailable");
-
-        }
 
 
 
@@ -52,9 +72,9 @@ public class Main {
     }
 
 
-    public void randomRec(Library lib){
-        for (int i = 0; i < lib.get; i++) {
-
-        }
+    public String randomRec(Library lib, Person p){
+        int ran = (int) Math.floor(Math.random()*lib.getBookList().size());
+        p.updateTempList(lib.getBookList().get(ran));
+        return lib.getBookList().get(ran).toString();
     }
 }
