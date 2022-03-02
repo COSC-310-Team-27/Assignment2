@@ -1,5 +1,4 @@
 package com.company;
-import org.opencv.core.Core;
 
 import java.text.ParseException;
 import java.util.*;
@@ -26,6 +25,7 @@ public class Main {
         user1.setUserVector();
         user1.setPcaVector(pca.getStandardUser());
         user1.setTopThree(pca.getTopThree());
+
         chatBot.loopGeneraTitle(user1,pca,pca.getTopThree(), false);
     }
 

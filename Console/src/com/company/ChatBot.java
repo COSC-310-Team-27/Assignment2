@@ -72,21 +72,50 @@ public class ChatBot {
 
 		Scanner sc = new Scanner(System.in);
 		boolean happy = false;
+		int loopNum = 0;
+
+
 		for (String s: suggest) {
-			System.out.println("Can i suggest " + s + " ?");
+			getConsolation(loopNum);
+			System.out.println("Can i suggest: ");
+			System.out.println(s);
 			String reply = sc.next();
 			happy = testReaction(reply);
 			if(happy) {
 				System.out.print("That's great, are these books of any interest? \n"
 						+ library.listString(library.getGeneraList(s)));
+				break;
 			}
+			loopNum++;
 		}
 		if(!happy) {
+			getConsolation(loopNum);
+			System.out.println("");
 			ArrayList<String> finalOption = pca.remainingOptions(person.getTopThree());
 			loopGeneraTitle(person,pca,finalOption,true);
+
 		}
 	}
+	public void getConsolation(int loopNum) {
+		switch (loopNum) {
+			case(5): {
+				System.out.println("You sure are picky... but how about you go fuck yourself");
+			}
+			case(4): {
+				System.out.println("Sorry about that, maybe...");
+			}
+			case(3): {
+				System.out.println("Well then");
+			}
+			case(2): {
+				System.out.println("Sorry...");
+			}
+			case(1): {
+				System.out.println("Sorry about that, maybe i can recommend...");
+			}
+		}
 
+	}
 	public String getQuestion(int i,String s) {
 		String q = "";
 
