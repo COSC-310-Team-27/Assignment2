@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class Person {
     private String name;
     private String age;
@@ -8,14 +10,17 @@ public class Person {
     private String favoriteGenera;
     private int [] pcaVector;
     String [] generas = new String[] {"sci-fi","Romance","Action","Comedy", "Education","Classic","Horror"};
-    String [] topThree;
+    ArrayList<String> topThree = new ArrayList<>();
     private int [] userVector = new int[generas.length];
+    private ArrayList<Book> tempList = new ArrayList<Book>();
+    private ArrayList<Book> permList = new ArrayList<Book>();
+    private ArrayList<Book> shoppingCart = new ArrayList<>();
 
-    public String[] getTopThree() {
+    public ArrayList<String> getTopThree() {
         return topThree;
     }
 
-    public void setTopThree(String[] topThree) {
+    public void setTopThree(ArrayList<String> topThree) {
         this.topThree = topThree;
     }
 
@@ -98,5 +103,33 @@ public class Person {
     public void setFavoriteGenera(String favoriteGenera) {
         this.favoriteGenera = favoriteGenera;
     }
+    public ArrayList<Book> getTempList(){
+        return tempList;
+    }
+    public ArrayList<Book> getPermList(){
+        return permList;
+    }
+
+    public void updateTempList(Book b){
+        tempList.add(b);
+    }
+    public void removeTempList(Book b){
+        for (int i = 0; i < tempList.size(); i++) {
+            if(tempList.get(i).getTitle().equalsIgnoreCase(b.getTitle())){
+                tempList.remove(i);
+            }
+        }
+    }
+    public void updatePermList(Book b){
+        permList.add(b);
+    }
+    public void removePermList(Book b){
+        for (int i = 0; i < permList.size(); i++) {
+            if(permList.get(i).getTitle().equalsIgnoreCase(b.getTitle())){
+                permList.remove(i);
+            }
+        }
+    }
+
 
 }

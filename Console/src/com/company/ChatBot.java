@@ -2,7 +2,7 @@ package com.company;
 import java.util.*;
 
 public class ChatBot {
-	private String s1 = "Hello, my name is chat bot";
+/*	private String s1 = "Hello, my name is chat bot";
 	private String s2 = "May I suggest %s";
 	private String s3 = "Can I suggest something in our %s section?";
 
@@ -16,22 +16,103 @@ public class ChatBot {
 	private String q3 = "What is your favorite genera?";
 	private String q4 = "What is your favorite book?";
 	private String q5 = "What is your favorite genera?";
-	private String q6 = "What is your favorite book?";
-
+	private String q6 = "What is your favorite book?";*/
+	Library library = new Library();
+	private String p1 = "yes";
+	private String p2 = "yeah";
+	private String p3 = "yep";
+	private String p4 = "yeet";
+	private ArrayList<String> positiveFeedBack = new ArrayList<>();
 	private Person person;
-	private ArrayList<String> statements = new ArrayList<>(Arrays.asList(s1,s2,s3,s4,s5,s6));
-	private ArrayList<String> questions = new ArrayList<>(Arrays.asList(q0,q1,q2,q3,q4,q5,q6));
+	private ArrayList<String> statements = new ArrayList<>();
+	private ArrayList<question> questions = new ArrayList<>();
+	//private ArrayList<String> questions = new ArrayList<>(Arrays.asList(q0,q1,q2,q3,q4,q5,q6));
+	public ChatBot(){
+		statements.add("Hello, my name is chat bot your personal library assistant");
+		statements.add("eg. Random recommendation, or by favourite book, or favourite genre. Or search for a book by title, page, author. Or set of books by author, genre, page.");
+		statements.add("By: ");
+		statements.add("I would recommend the following book(s): ");
+		statements.add("I found %d books by that title: ");
+		statements.add("I found %d books by that author: ");
+		statements.add("I found %d books in that genre: ");
+		statements.add("I found %d books of that length: ");
+		statements.add("Error, no by that title...");
+		statements.add("Error, no books by that author...");
+		statements.add("Error, no books in that genre...");
+		statements.add("Error, no books of that length...");
+		statements.add("Error, no books to return..."); //Variations: No book by that title, no books by that author, no books of that genre, no books of that length
+		//statements.add("Are you a first time user?");
+		//statements.add("Welcome back %s how may I help you today?"); no need to output example of services statement b/c user is not new.
+		statements.add("May I suggest %s");
+		questions.add(new question("generic", 0, "What is your name?"));
+		questions.add(new question("generic", 0, "How old are you %s?"));
+		questions.add(new question("generic", 0, "What is your occupation %s?"));
+		questions.add(new question("generic", 0, "What is your favourite book %s?"));
+		questions.add(new question("generic", 0, "What is your favourite genre %s?"));
+		//questions.add(new question("generic", 0, "What service can I provide? "));  //considering to add two more elements, two to indicate the statement(s) index(s)
+		questions.add(new question("loop", 0, "What should I base my recommendation on? "));
+		questions.add(new question("loop", 1, "Would you require additional service?"));
+		positiveFeedBack.add(p1);
+		positiveFeedBack.add(p2);
+		positiveFeedBack.add(p3);
+		positiveFeedBack.add(p4);
 
-	public String testReaction(String reply, Person user) {
+	}
+	public boolean testReaction(String reply) {
+		boolean happy = false;
+		for (String s:positiveFeedBack) {
+			if(s.contains(reply.toLowerCase())||reply.contains(s.toLowerCase())) {
+				happy = true;
+			}
+		}
+		return happy;
+	}
 
-		if(reply.toLowerCase().contains("no")) {
-			return "no";
+	public void loopGeneraTitle(Person person,PCA pca, ArrayList<String> suggest,boolean last) {
+
+		Scanner sc = new Scanner(System.in);
+		boolean happy = false;
+		int loopNum = 0;
+
+
+		for (String s: suggest) {
+			getConsolation(loopNum);
+			System.out.println("Can i suggest: ");
+			System.out.println(s);
+			String reply = sc.next();
+			happy = testReaction(reply);
+			if(happy) {
+				System.out.print("That's great, are these books of any interest? \n"
+						+ library.listString(library.getGeneraList(s)));
+				break;
+			}
+			loopNum++;
 		}
-		if(reply.toLowerCase().contains("yes")) {
-			return "yes";
+		if(!happy) {
+			getConsolation(loopNum);
+			System.out.println("");
+			ArrayList<String> finalOption = pca.remainingOptions(person.getTopThree());
+			loopGeneraTitle(person,pca,finalOption,true);
+
 		}
-		else {
-			return "unsure";
+	}
+	public void getConsolation(int loopNum) {
+		switch (loopNum) {
+			case(5): {
+				System.out.println("You sure are picky... but how about you go fuck yourself");
+			}
+			case(4): {
+				System.out.println("Sorry about that, maybe...");
+			}
+			case(3): {
+				System.out.println("Well then");
+			}
+			case(2): {
+				System.out.println("Sorry...");
+			}
+			case(1): {
+				System.out.println("Sorry about that, maybe i can recommend...");
+			}
 		}
 
 	}
@@ -39,7 +120,7 @@ public class ChatBot {
 		String q = "";
 
 		if (questions.size() >i ) {
-			q = questions.get(i);
+			q = questions.get(i).toString();
 			if (q.contains("%s")) {
 				q = String.format(q,s);
 			}
@@ -53,7 +134,7 @@ public class ChatBot {
 		String q = "";
 
 		if (questions.size() >i ) {
-			q = questions.get(i);
+			q = String.valueOf(questions.get(i));
 			if (q.contains("%s")) {
 				q = String.format(q,"");
 			}
@@ -67,7 +148,7 @@ public class ChatBot {
 		String q = "";
 
 		if (statements.size() >i ) {
-			q = statements.get(i);
+			q = statements.get(i).toString();
 			if (q.contains("%s")) {
 				q = String.format(q,s);
 			}
@@ -92,7 +173,7 @@ public class ChatBot {
 			return "I can't think of anything else";
 	}
 
-	public void setQuestions(ArrayList<String> questions) {
+	public void setQuestions(ArrayList<question> questions) {
 		this.questions = questions;
 	}
 
