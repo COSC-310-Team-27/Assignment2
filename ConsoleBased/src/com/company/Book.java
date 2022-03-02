@@ -49,4 +49,11 @@ public class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+    public int getPages(){ return pages; }
+
+    //Same as method in library class.
+    public String getBookDetails(){
+        return "Title: " + title + "\t\tGenre: " + genre + "\t\tAuthor: " + author;
+    }
 }

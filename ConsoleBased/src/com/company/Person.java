@@ -70,6 +70,13 @@ public class Person {
         this.favoriteGenera = favoriteGenera;
     }
 
+    public ArrayList<Book> getTempList(){
+        return tempList;
+    }
+    public ArrayList<Book> getPermList(){
+        return permList;
+    }
+
     public void updateTempList(Book b){
         tempList.add(b);
     }

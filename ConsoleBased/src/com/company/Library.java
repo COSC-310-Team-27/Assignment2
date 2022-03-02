@@ -22,7 +22,7 @@ public class Library {
         bookList.add(new Book("The Great Gatsby", "Classic", 300, "F. Scott Fitzgerald"));
         bookList.add(new Book("The Love Hypothesis", "Romance", 384, "Ali Hazelwood"));
         bookList.add(new Book("The Fault in Our Stars", "Romance", 313, "John Green"));
-        bookList.add(new Book("Sierra Six", "Action", 528, "Mark Greaney"));
+        bookList.add(new Book("Sierra Six", "Action", 8, "Mark Greaney"));
         bookList.add(new Book("House of Earth and Blood", "Action", 816, "Sarah J. Maas"));
         bookList.add(new Book("Born a Crime", "Comedy", 304, "Trevor Noah"));
         bookList.add(new Book("Yearbook", "Comedy", 272, "Seth Rogen"));
@@ -57,9 +57,10 @@ public class Library {
         bookList.add(new Book(title,genre,pages,author));
         return true;
     }
-    /* To string exists
+    //To string exists.
+    //To string sucks so I'm using this
     public String getBookDetails(int i){
-        return "Title: " + bookList.get(i).getTitle() + "\tGenre: " + bookList.get(i).getGenre() + "\tAuthor" ;
+        return "Title: " + bookList.get(i).getTitle() + "\t\tGenre: " + bookList.get(i).getGenre() + "\t\tAuthor: " + bookList.get(i).getAuthor();
     }
-    */
+
 }

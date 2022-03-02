@@ -29,6 +29,8 @@ public class ChatBot {
 		questions.add(new question("generic", 0, "What is your name?"));
 		questions.add(new question("generic", 0, "How old are you %s?"));
 		questions.add(new question("generic", 0, "What is your occupation %s?"));
+		questions.add(new question("generic", 0, "What is your favourite book %s?"));
+		questions.add(new question("generic", 0, "What is your favourite genre %s?"));
 		//questions.add(new question("generic", 0, "What service can I provide? "));  //considering to add two more elements, two to indicate the statement(s) index(s)
 		questions.add(new question("loop", 0, "What should I base my recommendation on? "));
 		questions.add(new question("loop", 1, "Would you require additional service?"));
