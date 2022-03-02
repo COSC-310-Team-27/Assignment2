@@ -4,6 +4,7 @@ import java.util.*;
 public class Quiz {
     public ArrayList<QuizQuestion> quizQuestionsSet;
     public Quiz(){
+
         quizQuestionsSet = new ArrayList<QuizQuestion>();
         String q = " What is the second Harry Potter book called? Harry Potter &";
         String [] a = {"The Goblet of Wizzards" , "The Cursed Child" , "The Chamber of Secrets" , "Half-Blood Prince"};
@@ -63,7 +64,8 @@ public class Quiz {
             }
         }
         sc.close();
-        System.out.println("You scored: " + score + "/5");
+        System.out.println("You scored: " + score + "/5\n");
+        System.out.println("To retry the quiz reply: quiz, test me\nTo get book recommendations reply, recommendation, rec, book\n");
     }
 
 }
