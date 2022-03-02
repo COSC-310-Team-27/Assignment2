@@ -2,11 +2,11 @@ package com.company;
 import java.lang.String;
 import java.util.*;
 
-public class QuizQuestion{
+
+public class QuizQuestion {
     private String prompt;
     private ArrayList<String> options;
     private String answer;
-
 
     public QuizQuestion(String prompt, String[] options, String answer) {
         this.prompt = prompt;
