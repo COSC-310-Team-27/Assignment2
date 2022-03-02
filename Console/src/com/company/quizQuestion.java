@@ -1,15 +1,31 @@
 package com.company;
 import java.lang.String;
+import java.util.*;
 
-public class quizQuestion {
-    String prompt;
-    String ans;
+public class QuizQuestion{
+    private String prompt;
+    private ArrayList<String> options;
+    private String answer;
 
-    public quizQuestion(String q1, String a) {
-    }
 
-    public void quizQuestion(String prompt, String ans) {
+    public QuizQuestion(String prompt, String[] options, String answer) {
         this.prompt = prompt;
-        this.ans = ans;
+        this.options = new ArrayList<String>();
+        this.answer = answer;
+        for (int i = 0; i < options.length; i++){
+            this.options.add(options[i]);
+        }
+        //Shuffling questions
+        Collections.shuffle(this.options);
+        this.answer = answer;
+    }
+    public String getQuizQuestion(){
+        return prompt;
+    }
+    public ArrayList<String> getOptions(){
+        return options;
+    }
+    public String getAnswer(){
+        return answer;
     }
 }

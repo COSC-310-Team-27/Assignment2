@@ -198,7 +198,7 @@ public class Patterns {
       }
     };
   }
-
+/*
 
   String q0 = " What is the second Harry Potter book called? Harry Potter &\na.The Goblet of Wizzards\nb. The Cursed Child\nc. The Chamber of Secrets\nd. Half-Blood Prince ";
   String q1 = "In The Hobbit, what sort of creature is Smaug?\na. Dragon\nb. Wyvern\nc. Snake\nd. Rabbit\n";
@@ -221,6 +221,7 @@ public class Patterns {
           new quizQuestion(q4, "d"),
           new quizQuestion(q5, "a"),
           new quizQuestion(q6, "b"),
+
           new quizQuestion(q7, "a"),
           new quizQuestion(q8, "c"),
           new quizQuestion(q9, "b"),
@@ -240,7 +241,7 @@ public class Patterns {
           System.out.println("You scored: " + count + "/5");
     return "";
     }
-
+*/
 
 
 
