@@ -2,8 +2,7 @@ package com.company;
 
 public class Book {
     private String title, genre, author;
-    private int pages;
-    private Library lib;
+
     @Override
     public String toString() {
         return "Book{" +
@@ -16,12 +15,6 @@ public class Book {
     public Book(String title, String genre, String author) {
         this.title = title;
         this.genre = genre;
-        this.author = author;
-    }
-    public Book(String title, String genre, int pages, String author) {
-        this.title = title;
-        this.genre = genre;
-        this.pages = pages;
         this.author = author;
     }
     public Book() {
@@ -50,8 +43,5 @@ public class Book {
 
     public void setAuthor(String author) {
         this.author = author;
-    }
-    public String getBookDetails(){
-        return "Title: " + title + "\t\tGenre: " + genre + "\t\tAuthor: " + author;
     }
 }

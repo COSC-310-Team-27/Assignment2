@@ -14,8 +14,7 @@ public class question {
         content = c;
     }
 
-    @Override
-    public String toString() {
-        return this.content;
-    }
+
+
+
 }
