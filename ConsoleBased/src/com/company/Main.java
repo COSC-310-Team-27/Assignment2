@@ -48,7 +48,7 @@ public class Main {
             }
         }
         if(temp.size()>1){ //Necessary?
-            ran = (int) Math.round(Math.random()*temp.size());
+            ran = (int) Math.floor(Math.random()*temp.size());
             b = temp.get(ran);
         }
         else if(temp.size() == 1){
@@ -69,7 +69,7 @@ public class Main {
             }
         }
         if(temp.size()>1){ //Necessary?
-            ran = (int) Math.round(Math.random()*temp.size());
+            ran = (int) Math.floor(Math.random()*temp.size());
             System.out.println(ran);
             b = temp.get(ran);
         }
