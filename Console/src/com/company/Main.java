@@ -25,7 +25,6 @@ public class Main {
         user1.setUserVector();
         user1.setPcaVector(pca.getStandardUser());
         user1.setTopThree(pca.getTopThree());
-
         chatBot.loopGeneraTitle(user1,pca,pca.getTopThree(), false);
 	System.out.println("test"); 
     }

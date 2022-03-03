@@ -54,12 +54,9 @@ public class Library {
         bookList = getBookList();
         for (Book b:bookList) {
             if(b.getGenre() == genera) {
-                //System.out.println("match"+b.getGenre());
                 generaList.add(b);
             }
-
         }
-        //System.out.println(generaList);
         return  generaList;
     }
     public ArrayList<Book> getAuthorList(String author) {
@@ -72,6 +69,7 @@ public class Library {
         }
         return  authorList;
     }
+
     public ArrayList<String> getAllAuthors() {
         ArrayList<String> authors = new ArrayList<>();
         for (Book book :bookList) {
@@ -83,10 +81,11 @@ public class Library {
     public ArrayList<String> getTitleList(ArrayList<Book> books) {
         ArrayList<String> titles = new ArrayList<>();
         for (Book book :books) {
-            titles.add(book.getAuthor());
+            titles.add(book.getTitle());
         }
         return titles;
     }
+
     public Book getGeneraRand(String genera) {
         ArrayList<Book> generaList = getGeneraList(genera);
         int randNum = (int)(Math.random() * generaList.size());
@@ -110,11 +109,7 @@ public class Library {
         Book rand = bookList.get(randNum);
         return rand;
     }
-    public Book getTitleRandom(ArrayList<Book> books) {
-        int randNum = (int)(Math.random() * books.size());
-        Book rand = books.get(randNum);
-        return rand;
-    }
+
 
 
     public boolean addBook(String title, String genre, int pages, String author) {
