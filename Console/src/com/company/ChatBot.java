@@ -88,18 +88,18 @@ public class ChatBot {
 			String reply = sc.next();
 			happy = testReaction(reply);
 			if(happy) {
-				System.out.println("That's great!?");
+				System.out.println("That's great!");
 				ArrayList<String> titles = library.getTitleList(library.getGeneraList(s));
 				for (String t:titles) {
 					System.out.println("Can i suggest: ");
-					System.out.println(t + " ??");
+					System.out.println(t + "??");
 					String reply2 = sc.next();
 					addToCart = testReaction(reply2);
 					if(addToCart) {
 						person.chechOut.add(library.byTitle(t));
-						System.out.println("added the book" + t + " to cart");
+						System.out.println("Added the book " + t + ", to cart");
 						addToCart = false;
-						System.out.println("continue shopping?");
+						System.out.println("Continue shopping?");
 						String reply3 = sc.next();
 						continueBrowsing = testReaction(reply3);
 						if(!continueBrowsing) {

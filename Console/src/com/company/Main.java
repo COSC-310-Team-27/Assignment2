@@ -18,14 +18,15 @@ public class Main {
         System.out.println(chatBot.getQuestion(2, user1.getName()));
         user1.setOccupation(parse.getWord());
         System.out.println(chatBot.getQuestion(3, user1.getName()));
-        user1.setFavoriteBook(sc.next());
+        user1.setFavoriteBook(sc.nextLine());
         System.out.println(chatBot.getQuestion(4, user1.getName()));
-        user1.setFavoriteGenera(sc.next());
+        user1.setFavoriteGenera(sc.nextLine());
         PCA pca = new PCA(user1.getUserVector()); //create pca object using user1 person object
         user1.setUserVector();
         user1.setPcaVector(pca.getStandardUser());
         user1.setTopThree(pca.getTopThree());
         chatBot.loopGeneraTitle(user1,pca,pca.getTopThree(), false);
+        System.out.println(chatBot.getQuestion(5, user1.getName()));
         System.out.println(chatBot.getStatement(1));
         String in = sc.nextLine();
 
@@ -36,43 +37,51 @@ public class Main {
             if(in.equalsIgnoreCase("random title")){
                 System.out.println(chatBot.getStatement(13));
                 Book ran = library.getTitleRandom();
-                user1.updateTempList(ran);
                 System.out.println(ran.getBookDetails());
+                //System.out.println(chatBot.getStatement(3));
+                if(chatBot.testReaction(sc.nextLine())){ //
+                    user1.updateTempList(ran);
+                }
+                System.out.println(user1.getTempList());
             }
             else if(in.equalsIgnoreCase("random book in genre")){
                 System.out.println("Search by genre: ");
                 Book ran = library.getGeneraRand(sc.nextLine());
-                user1.updateTempList(ran);
-                System.out.println("Book(s) found: ");
                 System.out.println(ran.getBookDetails());
+                if(chatBot.testReaction(sc.nextLine())){ //
+                    user1.updateTempList(ran);
+                }
             }
             else if(in.equalsIgnoreCase("title")){
                 System.out.println("Search by title: ");
                 Book ran = library.byTitle(sc.nextLine());
-                user1.updateTempList(ran);
-                System.out.println("Book(s) found: ");
                 System.out.println(ran.getBookDetails());
+                if(chatBot.testReaction(sc.nextLine())){ //
+                    user1.updateTempList(ran);
+                }
             }
             else if(in.equalsIgnoreCase("author")){
                 System.out.println("Search by author: ");
                 Book ran = library.getAuthRand(sc.nextLine());
-                user1.updateTempList(ran);
-                System.out.println("Book(s) found: ");
+                System.out.println(ran.getBookDetails());
+
                 if(ran.getTitle() == null){
                     System.out.println(chatBot.getStatement(11));
                 }
                 else{
-                    System.out.println(chatBot.getStatement(12));
-                    System.out.println(ran.getBookDetails()); //try using break instead of else?
+                    //System.out.println(chatBot.getStatement(3));
+                    if(chatBot.testReaction(sc.nextLine())){ //
+                        user1.updateTempList(ran);
+                    }
                 }
             }
             else if(in.equalsIgnoreCase("pages")){
                 System.out.println("Search by pages: ");
                 Book ran = library.byPages(sc.nextLine());
-                user1.updateTempList(ran);
-                System.out.println(chatBot.getStatement(12));
-                System.out.println("Book(s) found: ");
                 System.out.println(ran.getBookDetails());
+                if(chatBot.testReaction(sc.nextLine())){ //
+                    user1.updateTempList(ran);
+                }
             }
             else if(in.equalsIgnoreCase("pca")){
                 System.out.println("Quick questions!");
@@ -102,14 +111,12 @@ public class Main {
             }
             else{
                 gate = 0;
-                System.out.println("We look forward to your next visit!");//Output templist or permlist? or something else.
                 break;
             }
 
 
         }
-
-        System.out.println(chatBot.getQuestion(6, user1.getName()));
+        System.out.println("We look forward to your next visit!");//Output templist or permlist? or something else.
 
     }
 
