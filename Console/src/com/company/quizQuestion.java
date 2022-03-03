@@ -3,12 +3,12 @@ import java.lang.String;
 import java.util.*;
 
 
-public class QuizQuestion {
+public class quizQuestion {
     private String prompt;
     private ArrayList<String> options;
     private String answer;
 
-    public QuizQuestion(String prompt, String[] options, String answer) {
+    public quizQuestion(String prompt, String[] options, String answer) {
         this.prompt = prompt;
         this.options = new ArrayList<String>();
         this.answer = answer;

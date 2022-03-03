@@ -44,8 +44,14 @@ public class Library {
     public void setBookList(ArrayList<Book> bookList) {
         this.bookList = bookList;
     }
-    public boolean addBook(String title, String genre, String pages, String author) {
-        bookList.add(new Book(title,genre,author));
+    //Add book to library return boolean value to caller.
+    public boolean addBook(String title, String genre, int pages, String author) {
+        for (int i = 0; i < bookList.size(); i++) {
+            if(title.equalsIgnoreCase(bookList.get(i).getTitle())){
+                return false;
+            }
+        }
+        bookList.add(new Book(title,genre,pages,author));
         return true;
     }
 
@@ -62,6 +68,7 @@ public class Library {
         //System.out.println(generaList);
         return  generaList;
     }
+    //Return arrayList of books by specific author in library.
     public ArrayList<Book> getAuthorList(String author) {
         ArrayList<Book> authorList = new ArrayList<>();
         for (Book b:bookList) {
@@ -72,14 +79,16 @@ public class Library {
         }
         return  authorList;
     }
+    //Return arrayList of strings of book authors in library.
     public ArrayList<String> getAllAuthors() {
         ArrayList<String> authors = new ArrayList<>();
         for (Book book :bookList) {
+
             authors.add(book.getAuthor());
         }
         return authors;
     }
-
+    //Return arrayList of strings of book titles in library.
     public ArrayList<String> getTitleList(ArrayList<Book> books) {
         ArrayList<String> titles = new ArrayList<>();
         for (Book book :books) {
@@ -87,6 +96,7 @@ public class Library {
         }
         return titles;
     }
+    //Return random book by genera to caller.
     public Book getGeneraRand(String genera) {
         ArrayList<Book> generaList = getGeneraList(genera);
         int randNum = (int)(Math.random() * generaList.size());
@@ -96,6 +106,7 @@ public class Library {
         }
         return rand;
     }
+    //Return random book written by author to caller.
     public Book getAuthRand(String author) {
         ArrayList<Book> authorList = getAuthorList(author);
         int randNum = (int) (Math.random() * authorList.size());
@@ -105,11 +116,13 @@ public class Library {
         }
         return rand;
     }
+    //Returns a random book in library to caller.
     public Book getTitleRandom() {
         int randNum = (int)(Math.random() * bookList.size());
         Book rand = bookList.get(randNum);
         return rand;
     }
+    //Returns a random book from arrayList of books passed to method, to caller.
     public Book getTitleRandom(ArrayList<Book> books) {
         int randNum = (int)(Math.random() * books.size());
         Book rand = books.get(randNum);
@@ -117,21 +130,94 @@ public class Library {
     }
 
 
-    public boolean addBook(String title, String genre, int pages, String author) {
-        bookList.add(new Book(title,genre,pages,author));
-        return true;
-    }
-    //To string exists.
-    //To string sucks so I'm using this
+    //Tostring of a book at given index.
     public String getBookDetails(int i){
         return "Title: " + bookList.get(i).getTitle() + "\t\tGenre: " + bookList.get(i).getGenre() + "\t\tAuthor: " + bookList.get(i).getAuthor();
     }
+    //Returns a string that is a list of all the book titles, in the array of books passed to method, to caller.
     public String listString(ArrayList<Book> books)  {
-            String bookString = "";
+        String bookString = "";
         for (Book b:books) {
             bookString += b.getTitle() + " \n";
         }
         return bookString;
+    }
+    public static Book favB(Library l, Person p){
+        Book b = new Book();
+        int a = 1;
+        for (int i = 0; i < l.getBookList().size(); i++) {
+            if(p.getFavoriteBook().equalsIgnoreCase(l.getBookList().get(i).getTitle())){ //In the future: include books with multiple vol or series
+                b = l.getBookList().get(i);
+            }
+        }
+        return b;
+    }
+    public static Book favG(Library l, Person p){
+        Book b = new Book();
+        ArrayList<Book> temp = new ArrayList<Book>();
+        int a = 1;
+        int ran = 0;
+        for (int i = 0; i < l.getBookList().size(); i++) {
+            if(p.getFavoriteGenera().equalsIgnoreCase(l.getBookList().get(i).getGenre())){ //In the future: include books with multiple vol or series
+                temp.add(l.getBookList().get(i));
+            }
+        }
+        if(temp.size()>0){ //Necessary?
+            //ran = (int) Math.round(Math.random()*temp.size());
+            b = temp.get(ran);
+        }
+        return b;
+    }
+    public static Book byTitle(Library l, Person p, String s){ //In the future return list, from which user can pick from.
+        Book b = new Book();
+        ArrayList<Book> temp = new ArrayList<Book>();
+        int a = 1;
+        int ran = 0;
+        for (int i = 0; i < l.getBookList().size(); i++) {
+            if(s.equalsIgnoreCase(l.getBookList().get(i).getTitle())){
+                temp.add(l.getBookList().get(i));
+            }
+        }
+        if(temp.size()>1){ //Necessary?
+            ran = (int) Math.floor(Math.random()*temp.size());
+            b = temp.get(ran);
+        }
+        else if(temp.size() == 1){
+            b = temp.get(0);
+        }
+        return b;
+    }
+
+    public static Book byPages(Library l, Person p, String s){ //In the future return list, from which user can pick from. And perhaps within a range of the inputted pages
+        Book b = new Book();
+        ArrayList<Book> temp = new ArrayList<Book>();
+        int a = 1;
+        int ran = 0;
+        int k = Integer.parseInt(s);
+        for (int i = 0; i < l.getBookList().size(); i++) {
+            if(k == l.getBookList().get(i).getPages()){
+                temp.add(l.getBookList().get(i));
+            }
+        }
+        if(temp.size()>1){ //Necessary?
+            ran = (int) Math.floor(Math.random()*temp.size());
+            System.out.println(ran);
+            b = temp.get(ran);
+        }
+        else if(temp.size() == 1){
+            b = temp.get(0);
+        }
+        return b;
+    }
+    //Remove dupe for some methods
+    public Book removeDupe(Book in, ArrayList<Book> out){
+        Book b = new Book();
+        for (int i = 0; i < out.size(); i++) {
+            if(in.getTitle().equalsIgnoreCase(out.get(i).getTitle())){
+                out.remove(i);
+            }
+        }
+        return b;
     }
 
 }

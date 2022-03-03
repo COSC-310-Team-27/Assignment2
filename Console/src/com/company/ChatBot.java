@@ -30,7 +30,6 @@ public class ChatBot {
 	public ChatBot(){
 		statements.add("Hello, my name is chat bot your personal library assistant");
 		statements.add("eg. Random recommendation, or by favourite book, or favourite genre. Or search for a book by title, page, author. Or set of books by author, genre, page.");
-		statements.add("By: ");
 		statements.add("I would recommend the following book(s): ");
 		statements.add("I found %d books by that title: ");
 		statements.add("I found %d books by that author: ");
@@ -41,6 +40,8 @@ public class ChatBot {
 		statements.add("Error, no books in that genre...");
 		statements.add("Error, no books of that length...");
 		statements.add("Error, no books to return..."); //Variations: No book by that title, no books by that author, no books of that genre, no books of that length
+		statements.add("Wow, he made his own language for his books!");
+		statements.add("A book chosen by the gods!");
 		//statements.add("Are you a first time user?");
 		//statements.add("Welcome back %s how may I help you today?"); no need to output example of services statement b/c user is not new.
 		statements.add("May I suggest %s");

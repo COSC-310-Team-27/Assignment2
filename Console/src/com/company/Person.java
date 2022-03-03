@@ -111,6 +111,7 @@ public class Person {
     }
 
     public void updateTempList(Book b){
+        removeTempList(b); //Removes duplicates
         tempList.add(b);
     }
     public void removeTempList(Book b){
@@ -120,6 +121,7 @@ public class Person {
             }
         }
     }
+    //Once we have a working database we could pull the permanent list of all books user has borrowed
     public void updatePermList(Book b){
         permList.add(b);
     }
