@@ -14,14 +14,22 @@ public class Person {
     private int [] userVector = new int[generas.length];
     private ArrayList<Book> tempList = new ArrayList<Book>();
     private ArrayList<Book> permList = new ArrayList<Book>();
-    private ArrayList<Book> shoppingCart = new ArrayList<>();
+    ArrayList<Book> chechOut = new ArrayList<>();
+    public ArrayList<Book> getCheckOut() {
+        return checkOut;
+    }
+
+    public void setCheckOut(ArrayList<Book> checkOut) {
+        this.checkOut = checkOut;
+    }
+
+    private ArrayList<Book> checkOut = new ArrayList<>();
 
     public ArrayList<String> getTopThree() {
         return topThree;
     }
 
     public void setTopThree(ArrayList<String> topThree) {
-        //System.out.println("In settopthree");
         this.topThree = topThree;
     }
 
@@ -45,7 +53,6 @@ public class Person {
     }
 
     public void setPcaVector(int[] pcaVector) {
-        //System.out.println("In setpcavector");
         this.pcaVector = pcaVector;
     }
 
@@ -113,7 +120,6 @@ public class Person {
     }
 
     public void updateTempList(Book b){
-        removeTempList(b); //Removes duplicates
         tempList.add(b);
     }
     public void removeTempList(Book b){
@@ -123,7 +129,6 @@ public class Person {
             }
         }
     }
-    //Once we have a working database we could pull the permanent list of all books user has borrowed
     public void updatePermList(Book b){
         permList.add(b);
     }

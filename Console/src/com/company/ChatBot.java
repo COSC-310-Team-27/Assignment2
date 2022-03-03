@@ -22,6 +22,7 @@ public class ChatBot {
 	private String p2 = "yeah";
 	private String p3 = "yep";
 	private String p4 = "yeet";
+	private String p5 = "sure";
 	private ArrayList<String> positiveFeedBack = new ArrayList<>();
 	private Person person;
 	private ArrayList<String> statements = new ArrayList<>();
@@ -30,6 +31,7 @@ public class ChatBot {
 	public ChatBot(){
 		statements.add("Hello, my name is chat bot your personal library assistant");
 		statements.add("eg. Random recommendation, or by favourite book, or favourite genre. Or search for a book by title, page, author. Or set of books by author, genre, page.");
+		statements.add("By: ");
 		statements.add("I would recommend the following book(s): ");
 		statements.add("I found %d books by that title: ");
 		statements.add("I found %d books by that author: ");
@@ -40,8 +42,6 @@ public class ChatBot {
 		statements.add("Error, no books in that genre...");
 		statements.add("Error, no books of that length...");
 		statements.add("Error, no books to return..."); //Variations: No book by that title, no books by that author, no books of that genre, no books of that length
-		statements.add("Wow, he made his own language for his books!");
-		statements.add("A book chosen by the gods!");
 		//statements.add("Are you a first time user?");
 		//statements.add("Welcome back %s how may I help you today?"); no need to output example of services statement b/c user is not new.
 		statements.add("May I suggest %s");
@@ -57,6 +57,7 @@ public class ChatBot {
 		positiveFeedBack.add(p2);
 		positiveFeedBack.add(p3);
 		positiveFeedBack.add(p4);
+		positiveFeedBack.add(p5);
 
 	}
 	public boolean testReaction(String reply) {
@@ -80,12 +81,11 @@ public class ChatBot {
 
 		for (String s: suggest) {
 			getConsolation(loopNum);
-			System.out.println("Can i suggest: ");
-			System.out.println(s);
+			System.out.println("Would you like to browse something in our ");
+			System.out.println(s + " section?");
 			String reply = sc.next();
 			happy = testReaction(reply);
 			if(happy) {
-
 				System.out.println("That's great!?");
 				ArrayList<String> titles = library.getTitleList(library.getGeneraList(s));
 				for (String t:titles) {
@@ -94,25 +94,26 @@ public class ChatBot {
 					String reply2 = sc.next();
 					addToCart = testReaction(reply2);
 					if(addToCart) {
-						//TODO addtoCart()
+						person.chechOut.add(library.byTitle(t));
 						System.out.println("added the book" + t + "to cart");
 						addToCart = false;
-						System.out.println("continue browsing?");
+						System.out.println("continue shopping?");
 						String reply3 = sc.next();
 						continueBrowsing = testReaction(reply3);
 						if(!continueBrowsing) {
-							break;
+							return;
 						}
-
 					}
-
 				}
-						//library.getGeneraList(s);
-				break;
+			}
+			else {
+				//System.out.println("inner console");
+				//getConsolation(loopNum);
 			}
 			loopNum++;
 		}
 		if(!happy) {
+			//System.out.println("outter console");
 			getConsolation(loopNum);
 			System.out.println("");
 			ArrayList<String> finalOption = pca.remainingOptions(person.getTopThree());
@@ -120,24 +121,31 @@ public class ChatBot {
 
 		}
 	}
+
 	public void getConsolation(int loopNum) {
 		switch (loopNum) {
-			case(5): {
-				System.out.println("You sure are picky... but how about you go fuck yourself");
+			case(1): {
+				System.out.println("You sure are picky...");
+				break;
 			}
-			case(4): {
+			case(2): {
 				System.out.println("Sorry about that, maybe...");
+				break;
 			}
 			case(3): {
 				System.out.println("Well then");
+				break;
 			}
-			case(2): {
+			case(4): {
 				System.out.println("Sorry...");
+				break;
 			}
-			case(1): {
+			case(5): {
 				System.out.println("Sorry about that, maybe i can recommend...");
+				break;
 			}
 		}
+
 
 	}
 	public String getQuestion(int i,String s) {

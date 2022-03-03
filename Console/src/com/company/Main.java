@@ -10,8 +10,6 @@ public class Main {
         Library library = new Library();
         ChatBot chatBot = new ChatBot();
         Person user1 = new Person();
-        String in = "";
-
         System.out.println(chatBot.getStatement(0));
         System.out.println(chatBot.getQuestion(0));
         user1.setName(parse.getWord());
@@ -20,14 +18,16 @@ public class Main {
         System.out.println(chatBot.getQuestion(2, user1.getName()));
         user1.setOccupation(parse.getWord());
         System.out.println(chatBot.getQuestion(3, user1.getName()));
-        user1.setFavoriteBook(sc.nextLine());
+        user1.setFavoriteBook(sc.next());
         System.out.println(chatBot.getQuestion(4, user1.getName()));
-        user1.setFavoriteGenera(sc.nextLine());
+        user1.setFavoriteGenera(sc.next());
         PCA pca = new PCA(user1.getUserVector()); //create pca object using user1 person object
-
-        System.out.println(chatBot.getQuestion(5, user1.getName()));
+        user1.setUserVector();
+        user1.setPcaVector(pca.getStandardUser());
+        user1.setTopThree(pca.getTopThree());
+        chatBot.loopGeneraTitle(user1,pca,pca.getTopThree(), false);
         System.out.println(chatBot.getStatement(1));
-        in = sc.nextLine();
+        String in = sc.nextLine();
 
         int gate = 1;
         while(gate == 1){

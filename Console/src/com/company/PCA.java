@@ -42,13 +42,12 @@ public class PCA {
 
 
     public int [] getStandardUser() {
-        //System.out.println("In getStandardUser");
         int [] standard = Arrays.copyOfRange(utility[index],0,utility[index].length);
         return standard;
     }
 
     public ArrayList<String> getTopThree() {
-        //System.out.println("In gettopthree");
+
         int [] indices = new int [] {0,0,0};
         ArrayList<String> values = new ArrayList<>();
         int row = index;
