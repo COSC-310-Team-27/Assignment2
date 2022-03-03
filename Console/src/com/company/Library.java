@@ -54,7 +54,7 @@ public class Library {
         bookList.add(new Book(title,genre,pages,author));
         return true;
     }
-
+    //Return arrayList of books by specific genre in library.
     public ArrayList<Book> getGeneraList(String genera) {
         ArrayList<Book> generaList = new ArrayList<>();
         bookList = getBookList();
@@ -76,7 +76,23 @@ public class Library {
         }
         return  authorList;
     }
-    //Return arrayList of strings of book authors in library.
+    //Return arrayList of strings of all authors in library.
+    //Specially made for a method that requires a list instead of arraylist
+    public String [] getAllGeneras() {
+        String [] allgenres;
+        ArrayList<Book> genres = new ArrayList<>();
+        for (Book book :bookList) {
+            if(!checkDup(book, genres)){
+                genres.add(book);
+            }
+        }
+        allgenres = new String[genres.size()];
+        for (int i = 0; i < allgenres.length; i++) {
+            allgenres[i] = genres.get(i).getGenre();
+        }
+        return allgenres;
+    }
+    //Return arrayList of strings of all authors in library.
     public ArrayList<String> getAllAuthors() {
         ArrayList<String> authors = new ArrayList<>();
         for (Book book :bookList) {
@@ -136,24 +152,27 @@ public class Library {
         }
         return bookString;
     }
-    public static Book favB(Library l, Person p){
+    //Returns random book that is similar to user's favourite book
+    //Incomplete and unused, held for future use.
+    public Book favB(Person p){
         Book b = new Book();
         int a = 1;
-        for (int i = 0; i < l.getBookList().size(); i++) {
-            if(p.getFavoriteBook().equalsIgnoreCase(l.getBookList().get(i).getTitle())){ //In the future: include books with multiple vol or series
-                b = l.getBookList().get(i);
+        for (int i = 0; i < getBookList().size(); i++) {
+            if(p.getFavoriteBook().equalsIgnoreCase(getBookList().get(i).getTitle())){ //In the future: include books with multiple vol or series
+                b = getBookList().get(i);
             }
         }
         return b;
     }
-    public static Book favG(Library l, Person p){
+    //Returns random book within the same genre as user's favourite genre
+    public Book favG(Person p){
         Book b = new Book();
         ArrayList<Book> temp = new ArrayList<Book>();
         int a = 1;
         int ran = 0;
-        for (int i = 0; i < l.getBookList().size(); i++) {
-            if(p.getFavoriteGenera().equalsIgnoreCase(l.getBookList().get(i).getGenre())){ //In the future: include books with multiple vol or series
-                temp.add(l.getBookList().get(i));
+        for (int i = 0; i < getBookList().size(); i++) {
+            if(p.getFavoriteGenera().equalsIgnoreCase(getBookList().get(i).getGenre())){ //In the future: include books with multiple vol or series
+                temp.add(getBookList().get(i));
             }
         }
         if(temp.size()>0){ //Necessary?
@@ -184,16 +203,6 @@ public class Library {
         }
         return b;
     }
-    //Remove dupe for some methods
-    public Book removeDupe(Book in, ArrayList<Book> out){
-        Book b = new Book();
-        for (int i = 0; i < out.size(); i++) {
-            if(in.getTitle().equalsIgnoreCase(out.get(i).getTitle())){
-                out.remove(i);
-            }
-        }
-        return b;
-    }
     public Book byTitle(String s){ //In the future return list, from which user can pick from.
         Book b = new Book();
         ArrayList<Book> temp = new ArrayList<Book>();
@@ -210,6 +219,17 @@ public class Library {
         }
 
         return b;
+    }
+    //Checks for dupes in get all authors and get all genres methods
+    //Returns true if a duplicate is found and false otherwise
+    public boolean checkDup(Book in, ArrayList<Book> out){
+
+        for (int i = 0; i < out.size(); i++) {
+            if(in.getAuthor().equalsIgnoreCase(out.get(i).getAuthor()) || in.getGenre().equalsIgnoreCase(out.get(i).getGenre())){
+                return true;
+            }
+        }
+        return false;
     }
 
 }

@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Patterns {
+public class patterns {
   //Default agent greeting
   Scanner sc = new Scanner(System.in);
   //ChatBot chatBot = new ChatBot();
