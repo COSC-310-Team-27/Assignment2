@@ -2,7 +2,7 @@ package com.company;
 import java.sql.Array;
 import java.util.*;
 
-public class Patterns {
+public class patterns {
   //Default agent greeting
   Scanner sc = new Scanner(System.in);
   //ChatBot chatBot = new ChatBot();
