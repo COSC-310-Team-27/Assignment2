@@ -59,7 +59,7 @@ public class Library {
         ArrayList<Book> generaList = new ArrayList<>();
         bookList = getBookList();
         for (Book b:bookList) {
-            if(b.getGenre() == genera) {
+            if(b.getGenre().equalsIgnoreCase(genera)) { //Don't use == to compare strings in Java, please. Unless you're comparing if they're pointing to the same object.
                 generaList.add(b);
             }
         }
@@ -98,9 +98,11 @@ public class Library {
         ArrayList<Book> generaList = getGeneraList(genera);
         int randNum = (int)(Math.random() * generaList.size());
         Book rand = new Book();
+        System.out.println(generaList.size());
         if (generaList.size()>0) {
             rand = generaList.get(randNum);
         }
+        System.out.println(rand.getBookDetails());
         return rand;
     }
     //Return random book written by author to caller.
@@ -160,35 +162,16 @@ public class Library {
         }
         return b;
     }
-    public static Book byTitle(Library l, Person p, String s){ //In the future return list, from which user can pick from.
-        Book b = new Book();
-        ArrayList<Book> temp = new ArrayList<Book>();
-        int a = 1;
-        int ran = 0;
-        for (int i = 0; i < l.getBookList().size(); i++) {
-            if(s.equalsIgnoreCase(l.getBookList().get(i).getTitle())){
-                temp.add(l.getBookList().get(i));
-            }
-        }
-        if(temp.size()>1){ //Necessary?
-            ran = (int) Math.floor(Math.random()*temp.size());
-            b = temp.get(ran);
-        }
-        else if(temp.size() == 1){
-            b = temp.get(0);
-        }
-        return b;
-    }
-
-    public static Book byPages(Library l, Person p, String s){ //In the future return list, from which user can pick from. And perhaps within a range of the inputted pages
+    //Returns random book using the pages passed into method to caller.
+    public Book byPages(String s){ //In the future return list, from which user can pick from. And perhaps within a range of the inputted pages
         Book b = new Book();
         ArrayList<Book> temp = new ArrayList<Book>();
         int a = 1;
         int ran = 0;
         int k = Integer.parseInt(s);
-        for (int i = 0; i < l.getBookList().size(); i++) {
-            if(k == l.getBookList().get(i).getPages()){
-                temp.add(l.getBookList().get(i));
+        for (int i = 0; i < getBookList().size(); i++) {
+            if(k == getBookList().get(i).getPages()){
+                temp.add(getBookList().get(i));
             }
         }
         if(temp.size()>1){ //Necessary?
@@ -209,6 +192,23 @@ public class Library {
                 out.remove(i);
             }
         }
+        return b;
+    }
+    public Book byTitle(String s){ //In the future return list, from which user can pick from.
+        Book b = new Book();
+        ArrayList<Book> temp = new ArrayList<Book>();
+        int a = 1;
+        int ran = 0;
+        for (int i = 0; i < getBookList().size(); i++) {
+            if(s.equalsIgnoreCase(getBookList().get(i).getTitle())){
+                temp.add(getBookList().get(i));
+            }
+        }
+        if(temp.size()>0){ //Necessary?
+            ran = (int) (Math.random()*temp.size());
+            b = temp.get(ran);
+        }
+
         return b;
     }
 

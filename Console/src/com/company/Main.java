@@ -24,9 +24,7 @@ public class Main {
         System.out.println(chatBot.getQuestion(4, user1.getName()));
         user1.setFavoriteGenera(sc.nextLine());
         PCA pca = new PCA(user1.getUserVector()); //create pca object using user1 person object
-        user1.setUserVector();
-        user1.setPcaVector(pca.getStandardUser());
-        user1.setTopThree(pca.getTopThree());
+
         System.out.println(chatBot.getQuestion(5, user1.getName()));
         System.out.println(chatBot.getStatement(1));
         in = sc.nextLine();
@@ -41,33 +39,50 @@ public class Main {
                 user1.updateTempList(ran);
                 System.out.println(ran.getBookDetails());
             }
-            else if(in.equalsIgnoreCase("random genre")){
-                System.out.println("Search by title: ");
-                Book ran = library;
-                user1.updateTempList(ran);
-                System.out.println("Book(s) found: ");
-                System.out.println(ran.getBookDetails());
-            }
-            else if(in.equalsIgnoreCase("random author")){
-                Book ran = library.getAuthRand();
+            else if(in.equalsIgnoreCase("random book in genre")){
+                System.out.println("Search by genre: ");
+                Book ran = library.getGeneraRand(sc.nextLine());
                 user1.updateTempList(ran);
                 System.out.println("Book(s) found: ");
                 System.out.println(ran.getBookDetails());
             }
             else if(in.equalsIgnoreCase("title")){
                 System.out.println("Search by title: ");
-                Book ran = library.getTitleRandom();
+                Book ran = library.byTitle(sc.nextLine());
                 user1.updateTempList(ran);
                 System.out.println("Book(s) found: ");
                 System.out.println(ran.getBookDetails());
             }
             else if(in.equalsIgnoreCase("author")){
                 System.out.println("Search by author: ");
-                Book ran = library.getAuthRand();
+                Book ran = library.getAuthRand(sc.nextLine());
+                user1.updateTempList(ran);
+                System.out.println("Book(s) found: ");
+                if(ran.getTitle() == null){
+                    System.out.println(chatBot.getStatement(11));
+                }
+                else{
+                    System.out.println(chatBot.getStatement(12));
+                    System.out.println(ran.getBookDetails()); //try using break instead of else?
+                }
+            }
+            else if(in.equalsIgnoreCase("pages")){
+                System.out.println("Search by pages: ");
+                Book ran = library.byPages(sc.nextLine());
                 user1.updateTempList(ran);
                 System.out.println(chatBot.getStatement(12));
                 System.out.println("Book(s) found: ");
                 System.out.println(ran.getBookDetails());
+            }
+            else if(in.equalsIgnoreCase("pca")){
+                System.out.println("Quick questions!");
+                System.out.println("These fast questions to get to know you won't end unless you type no after adding at least one book!");
+                user1.setUserVector();
+                user1.setPcaVector(pca.getStandardUser());
+                //System.out.println("pass1");
+                user1.setTopThree(pca.getTopThree());
+                //System.out.println("pass2");
+                chatBot.loopGeneraTitle(user1,pca,pca.getTopThree(), false);
             }
 
             else if(in.equalsIgnoreCase("getcartlist")){
@@ -96,7 +111,6 @@ public class Main {
 
         System.out.println(chatBot.getQuestion(6, user1.getName()));
 
-        chatBot.loopGeneraTitle(user1,pca,pca.getTopThree(), false);
     }
 
 }

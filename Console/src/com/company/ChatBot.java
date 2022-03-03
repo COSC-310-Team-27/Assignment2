@@ -97,7 +97,7 @@ public class ChatBot {
 						//TODO addtoCart()
 						System.out.println("added the book" + t + "to cart");
 						addToCart = false;
-						System.out.println("continue shopping?");
+						System.out.println("continue browsing?");
 						String reply3 = sc.next();
 						continueBrowsing = testReaction(reply3);
 						if(!continueBrowsing) {

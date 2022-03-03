@@ -21,6 +21,7 @@ public class Person {
     }
 
     public void setTopThree(ArrayList<String> topThree) {
+        //System.out.println("In settopthree");
         this.topThree = topThree;
     }
 
@@ -44,6 +45,7 @@ public class Person {
     }
 
     public void setPcaVector(int[] pcaVector) {
+        //System.out.println("In setpcavector");
         this.pcaVector = pcaVector;
     }
 
