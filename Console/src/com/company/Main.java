@@ -10,8 +10,20 @@ public class Main {
         Library library = new Library();
         ChatBot chatBot = new ChatBot();
         Person user1 = new Person();
-        System.out.println(chatBot.getStatement(0));
-        System.out.println(chatBot.getQuestion(0));
+        Patterns p1 = new Patterns();
+        
+        System.out.println(p1.getWelcome());
+        user1.setName(sc.next());
+        System.out.println(user1.getName() + p1.getIntro());
+        String s1 = sc.next();
+        System.out.println(user1.getName() + p1.getRobot(s1));
+        s1 = sc.nextLine();
+        System.out.println(user1.getName() + p1.getRobot(s1));
+        s1 = sc.nextLine();
+        System.out.println(user1.getName() + p1.getRobot(s1));
+        s1 = sc.nextLine();
+        System.out.println(user1.getName() + p1.getRobot(s1));
+        s1 = sc.nextLine();
         user1.setName(parse.getWord());
         System.out.println(chatBot.getQuestion(1, user1.getName()));
         user1.setAge(parse.getWord());
