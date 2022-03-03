@@ -9,7 +9,9 @@ public class Person {
     private String favoriteBook;
     private String favoriteGenera;
     private int [] pcaVector;
-    String [] generas = new String[] {"sci-fi","Romance","Action","Comedy", "Education","Classic","Horror"};
+    Library lib = new Library();
+    //String [] generas = new String[] {"sci-fi","Romance","Action","Comedy", "Education","Classic","Horror"};
+    String [] generas = lib.getAllGeneras();
     ArrayList<String> topThree = new ArrayList<>();
     private int [] userVector = new int[generas.length];
     private ArrayList<Book> tempList = new ArrayList<Book>();

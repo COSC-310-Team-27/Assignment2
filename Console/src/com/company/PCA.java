@@ -3,7 +3,10 @@ import java.util.*;
 
 
 public class PCA {
-    String [] generas = new String[] {"sci-fi","Romance","Action","Comedy", "Education","Classic","Horror"};
+    Library lib = new Library();
+    //String [] generas = new String[] {"sci-fi","Romance","Action","Comedy", "Education","Classic","Horror"};
+    //No exit statement, stating that there is no more genres to advise.
+    String [] generas = lib.getAllGeneras();
     /*
     TODO
      generate pca matrix from online db
