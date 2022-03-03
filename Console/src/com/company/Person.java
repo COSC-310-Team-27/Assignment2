@@ -9,23 +9,12 @@ public class Person {
     private String favoriteBook;
     private String favoriteGenera;
     private int [] pcaVector;
-    Library lib = new Library();
-    //String [] generas = new String[] {"sci-fi","Romance","Action","Comedy", "Education","Classic","Horror"};
-    String [] generas = lib.getAllGeneras();
+    String [] generas = new String[] {"sci-fi","Romance","Action","Comedy", "Education","Classic","Horror"};
     ArrayList<String> topThree = new ArrayList<>();
     private int [] userVector = new int[generas.length];
     private ArrayList<Book> tempList = new ArrayList<Book>();
     private ArrayList<Book> permList = new ArrayList<Book>();
-    ArrayList<Book> chechOut = new ArrayList<>();
-    public ArrayList<Book> getCheckOut() {
-        return checkOut;
-    }
-
-    public void setCheckOut(ArrayList<Book> checkOut) {
-        this.checkOut = checkOut;
-    }
-
-    private ArrayList<Book> checkOut = new ArrayList<>();
+    private ArrayList<Book> shoppingCart = new ArrayList<>();
 
     public ArrayList<String> getTopThree() {
         return topThree;

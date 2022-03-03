@@ -22,7 +22,6 @@ public class ChatBot {
 	private String p2 = "yeah";
 	private String p3 = "yep";
 	private String p4 = "yeet";
-	private String p5 = "sure";
 	private ArrayList<String> positiveFeedBack = new ArrayList<>();
 	private Person person;
 	private ArrayList<String> statements = new ArrayList<>();
@@ -57,7 +56,6 @@ public class ChatBot {
 		positiveFeedBack.add(p2);
 		positiveFeedBack.add(p3);
 		positiveFeedBack.add(p4);
-		positiveFeedBack.add(p5);
 
 	}
 	public boolean testReaction(String reply) {
@@ -65,7 +63,6 @@ public class ChatBot {
 		for (String s:positiveFeedBack) {
 			if(s.contains(reply.toLowerCase())||reply.contains(s.toLowerCase())) {
 				happy = true;
-				return happy;
 			}
 		}
 		return happy;
@@ -75,47 +72,23 @@ public class ChatBot {
 
 		Scanner sc = new Scanner(System.in);
 		boolean happy = false;
-		boolean addToCart = false;
-		boolean continueBrowsing = false;
 		int loopNum = 0;
+
+
 		for (String s: suggest) {
-			if(loopNum>suggest.size()) {
-				return;
-			}
 			getConsolation(loopNum);
-			System.out.println("Would you like to browse something in our ");
-			System.out.println(s + " section?");
+			System.out.println("Can i suggest: ");
+			System.out.println(s);
 			String reply = sc.next();
 			happy = testReaction(reply);
 			if(happy) {
-				System.out.println("That's great!");
-				ArrayList<String> titles = library.getTitleList(library.getGeneraList(s));
-				for (String t:titles) {
-					System.out.println("Can i suggest: ");
-					System.out.println(t + "??");
-					String reply2 = sc.next();
-					addToCart = testReaction(reply2);
-					if(addToCart) {
-						person.chechOut.add(library.byTitle(t));
-						System.out.println("Added the book " + t + ", to checkout list");
-						addToCart = false;
-						System.out.println("Continue browsing?");
-						String reply3 = sc.next();
-						continueBrowsing = testReaction(reply3);
-						if(!continueBrowsing) {
-							return;
-						}
-					}
-				}
-			}
-			else {
-				//System.out.println("inner console");
-				//getConsolation(loopNum);
+				System.out.print("That's great, are these books of any interest? \n"
+						+ library.listString(library.getGeneraList(s)));
+				break;
 			}
 			loopNum++;
 		}
 		if(!happy) {
-			//System.out.println("outter console");
 			getConsolation(loopNum);
 			System.out.println("");
 			ArrayList<String> finalOption = pca.remainingOptions(person.getTopThree());
@@ -123,27 +96,24 @@ public class ChatBot {
 
 		}
 	}
-
-
 	public void getConsolation(int loopNum) {
 		switch (loopNum) {
-			case(1): {
-				System.out.println("Searching...");
-				break;
+			case(5): {
+				System.out.println("You sure are picky... but how about you go fuck yourself");
 			}
-			case(2): {
-				System.out.println("Ok, Searching...");
-				break;
+			case(4): {
+				System.out.println("Sorry about that, maybe...");
 			}
 			case(3): {
-				System.out.println("Ok, lets try, Searching...");
-				break;
+				System.out.println("Well then");
 			}
-			default: {
-				System.out.println("Searching...");
+			case(2): {
+				System.out.println("Sorry...");
+			}
+			case(1): {
+				System.out.println("Sorry about that, maybe i can recommend...");
 			}
 		}
-
 
 	}
 	public String getQuestion(int i,String s) {
