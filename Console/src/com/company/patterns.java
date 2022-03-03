@@ -1,93 +1,30 @@
 package com.company;
-
 import java.sql.Array;
 import java.util.*;
-// This class is used to parse through a sentence and identify keywords
+
 public class Patterns {
   //Default agent greeting
   Scanner sc = new Scanner(System.in);
   //ChatBot chatBot = new ChatBot();
   Person user1 = new Person();
   Library lb = new Library();
-  Quiz q = new Quiz();
   ArrayList<Book> bk = new ArrayList<>();
 
-  // Returns greeting message with a prompt for the user to identify themself
   public String getWelcome() {
-    return "Hello I'm ChatBot!\nWhat's your first name?";
+    return "Hello I'm ChatBot!\nWhat is your first name?";
   }
 
-  //Returns a prompt to see what the user wants
   public String getIntro() {
-    return " is a beautiful name :).\nHow can I be of assistance?\nUse phrases or for a book recommendation reply: recommendation, rec, book\nQuiz\n";
+    return " is a beautiful name :). \n How can I be of assistance?\n eg.reply: recommendation, rec, book";
   }
-
-
-  public String getRobot(String sentence) {
-    String response = sentence;
-    if (findKeyword(response, "robot") >= 0 || findKeyword(response, "human") >= 0 ||
-            findKeyword(response, "bot") >= 0) {
-      response = " ,yes I am a robot, but I'm a good one.\nLet me prove it. How can I help you\n";
-    }
-    if (findKeyword(response, "joke") >= 0 || findKeyword(response, "jk") >= 0 ||
-            findKeyword(response, "laugh") >= 0) {
-      response = ", lol you're funny!\n";
-    }
-    if (findKeyword(response, "annoying") >= 0 || findKeyword(response, "suck") >= 0 ||
-            findKeyword(response, "boring")>= 0 || findKeyword(response, "bad") >= 0)  {
-      response = ", I'm sorry you feel that way!\n";
-    }
-    if (findKeyword(response, "annoying") >= 0 || findKeyword(response, "suck") >= 0 ||
-            findKeyword(response, "boring")>= 0 || findKeyword(response, "bad") >= 0)  {
-      response = ", I'm sorry you feel that way!\n";
-    }
-    if (findKeyword(response, "who made you") >= 0 || findKeyword(response, "your maker") >= 0 )  {
-      response = "Group 27, enrolled in COSC 310!\n";
-    }
-    if (findKeyword(response, "language") >= 0 || findKeyword(response, "speak") >= 0 )  {
-    response = "The only language I speak is english\n";
-    }
-    if (findKeyword(response, "weather") >= 0 || findKeyword(response, "rainy") >= 0 )  {
-      response = "Its beautiful at the moment. Nice and Sunny\n";
-    }
-    if (findKeyword(response, "how are you") >= 0)  {
-      response = "I'm having a great day so far!\nI like to feel useful, tell me what I can do for you\n";
-    }
-    if (findKeyword(response, "where is your store") >= 0)  {
-      response = "The store is currently virtual!\nThere Will be an update when we have more information\n";
-    }
-    if (findKeyword(response, "I wish I could tell you") >= 0) {
-      response = "how awesome things are about to be for you!\n";
-    }
-
-    return response;
-  }
-
 
   public String getLit(String sentence) {
     String response = sentence;
-    int max = 3;
-    int randNum = (int) (Math.random() * max);
-    String s = "";
-    switch (randNum) {
-      case 0:
-        s = "Here's a taste of the factual genres in our library!\nHistory\nJournalism\nPhilosophy\nPolitics & Social Sciences";
-      case 1:
-        s = "Here's a few fictional genres!\nReligion & Spirituality\nScience\nBiographies\nBusiness & Economics";
-      case 2:
-        s = "Just for you fictional genres!\nHealth & Wellness\nSelf Help\nTravel Guides\nCookbooks\nLanguage";
-    };
-    return s;
-}
-
-  public String getQuiz(String sentence) {
-    String response = sentence;
-
-    if (findKeyword(response, "quiz") >= 0 || findKeyword(response, "test") >= 0 ||
-            findKeyword(response, "tst") >= 0) {
-      response = "Let's test your skills! Answer 1,2,3,4 to choose your response\n";q.play();
+    if (findKeyword(response, "recommendation") >= 0 || findKeyword(response, "rec") >= 0 ||
+            findKeyword(response, "book") >= 0) {
+      response = "What type of literature are you interested in (fiction or non fiction)?\n ";
     }
-    return response;
+    return " ok what to begin.\n" + response;
   }
 
   public String getGenre(String sentence) {
@@ -118,21 +55,26 @@ public class Patterns {
 
 //Book information
 
+
   public String getGenreType(String sentence) {
     String response = sentence;
+
 
     if (findKeyword(response, "scifi") >= 0 || findKeyword(response, "science fiction") >= 0 ||
             findKeyword(response, "sci fi") >= 0 || findKeyword(response, "sci-fi") >= 0 ||
             findKeyword(response, "science-fiction") >= 0 || findKeyword(response, "futurism") >= 0 ||
             findKeyword(response, "skiffy") >= 0) {
       bk = lb.getGeneraList("Sci-Fi");
+      return "Match for your request is:" + bk;
     }
+
     if (findKeyword(response, "action") >= 0 || findKeyword(response, "fast-faced") >= 0 ||
             findKeyword(response, "adventure") >= 0 || findKeyword(response, "adventure book") >= 0 ||
             findKeyword(response, "adventure-book") >= 0 || findKeyword(response, "Thriller") >= 0 ||
             findKeyword(response, "Triller") >= 0) {
 
       bk = lb.getGeneraList("Action");
+      return "Match for your request is:" + bk;
     }
     if (findKeyword(response, "fantasy") >= 0 || findKeyword(response, "daydream") >= 0 ||
             findKeyword(response, "fancy") >= 0 || findKeyword(response, "figment") >= 0 ||
@@ -140,60 +82,72 @@ public class Patterns {
             findKeyword(response, "vision") >= 0) {
 
       bk = lb.getGeneraList("Fantasy");
+      return "Match for your request is:" + bk;
     }
     if (findKeyword(response, "horror") >= 0 || findKeyword(response, "terror") >= 0 ||
             findKeyword(response, "panic") >= 0 || findKeyword(response, "dread") >= 0 ||
             findKeyword(response, "chiller") >= 0 || findKeyword(response, "alarm") >= 0 ||
             findKeyword(response, "hate") >= 0) {
       bk = lb.getGeneraList("Horror");
+      return "Match for your request is:" + bk;
     }
     if (findKeyword(response, "mystery") >= 0 || findKeyword(response, "detective") >= 0 ||
             findKeyword(response, "puzzle") >= 0 || findKeyword(response, "riddle") >= 0 ||
             findKeyword(response, "secret") >= 0 || findKeyword(response, "conundrum") >= 0 ||
             findKeyword(response, "head-scratcher") >= 0) {
       bk = lb.getGeneraList("Mystery");
+      return "Match for your request is:" + bk;
     }
     if (findKeyword(response, "romance") >= 0 || findKeyword(response, "intrigue") >= 0 ||
             findKeyword(response, "infatuation") >= 0 || findKeyword(response, "entanglement") >= 0 ||
             findKeyword(response, "passion") >= 0 || findKeyword(response, "puppy love") >= 0 ||
             findKeyword(response, "hanky-panky") >= 0) {
       bk = lb.getGeneraList("Romance");
+      return "Match for your request is:" + bk;
+
     }
     if (findKeyword(response, "children") >= 0 || findKeyword(response, "kids") >= 0 ||
             findKeyword(response, "child") >= 0 || findKeyword(response, "kid") >= 0 ||
             findKeyword(response, "youngsters") >= 0 || findKeyword(response, "youth") >= 0 ||
             findKeyword(response, "squirts") >= 0) {
       bk = lb.getGeneraList("Children");
+      return "Match for your request is:" + bk;
+
     }
     if (findKeyword(response, "comedy") >= 0 || findKeyword(response, "humor") >= 0 ||
             findKeyword(response, "parody") >= 0 || findKeyword(response, "fun") >= 0 ||
             findKeyword(response, "laughter") >= 0 || findKeyword(response, "humerousness") >= 0 ||
             findKeyword(response, "whimsicality") >= 0) {
       bk = lb.getGeneraList("Comedy");
+      return "Match for your request is:" + bk;
     }
     if (findKeyword(response, "western") >= 0 || findKeyword(response, "cowboy") >= 0 ||
             findKeyword(response, "oat opera") >= 0 || findKeyword(response, "shoot-em-up") >= 0 ||
             findKeyword(response, "shoot em up") >= 0 || findKeyword(response, "Native Americans") >= 0 ||
             findKeyword(response, "ranches") >= 0) {
       bk = lb.getGeneraList("Western");
+      return "Match for your request is:" + bk;
     }
     if (findKeyword(response, "history") >= 0 || findKeyword(response, "past") >= 0 ||
             findKeyword(response, "yesteryear") >= 0 || findKeyword(response, "days of old") >= 0 ||
             findKeyword(response, "old days") >= 0 || findKeyword(response, "good old days") >= 0 ||
             findKeyword(response, "olden days") >= 0) {
       bk = lb.getGeneraList("History");
+      return "Match for your request is:" + bk;
     }
     if (findKeyword(response, "journalism") >= 0 || findKeyword(response, "news") >= 0 ||
             findKeyword(response, "reporting") >= 0 || findKeyword(response, "press") >= 0 ||
             findKeyword(response, "broadcast") >= 0 || findKeyword(response, "the fourth estate") >= 0 ||
             findKeyword(response, "the press") >= 0) {
       bk = lb.getGeneraList("Journalism");
+      return "Match for your request is:" + bk;
     }
     if (findKeyword(response, "philosopht") >= 0 || findKeyword(response, "phosopy") >= 0 ||
             findKeyword(response, "phylosophty") >= 0 || findKeyword(response, "phlosophy") >= 0 ||
             findKeyword(response, "phalosophy") >= 0 || findKeyword(response, "system") >= 0 ||
             findKeyword(response, "school of thought") >= 0) {
       bk = lb.getGeneraList("Journalism");
+      return "Match for your request is:" + bk;
 
     }
     if (findKeyword(response, "philosopht") >= 0 || findKeyword(response, "phosopy") >= 0 ||
@@ -201,11 +155,14 @@ public class Patterns {
             findKeyword(response, "phalosophy") >= 0 || findKeyword(response, "system") >= 0 ||
             findKeyword(response, "school of thought") >= 0) {
       bk = lb.getGeneraList("Journalism");
+      return "Match for your request is:" + bk;
 
     }
     return ", the match for your request is:\n"+ bk +"\n"+
     "you can select a new literature by replying: fiction or non fiction?\nTo test your book knowlegde reply: Quiz, test me\n";
   }
+// The Book Quiz implementation
+
 
   //Agent responds based on user's response
   public String getResponse(String sentence) {

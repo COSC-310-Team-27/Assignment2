@@ -51,7 +51,7 @@ public class Parse {
             String token = sc.nextLine();
             String [] line = token.split(" ");
             if(token.equalsIgnoreCase("exit")||token.contains("."));
-                reading = false;
+            reading = false;
             System.out.println(token);
             for (String s:line) {
                 list.add(s);

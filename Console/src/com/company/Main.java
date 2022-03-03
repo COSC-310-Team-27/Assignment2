@@ -3,8 +3,41 @@ package com.company;
 import java.text.ParseException;
 import java.util.*;
 public class Main {
-
     public static void main(String[] args) throws ParseException {
+
+        Scanner sc = new Scanner(System.in);
+        Quiz q = new Quiz();
+
+        Patterns p1 = new Patterns();
+        ChatBot chatBot = new ChatBot();
+        Person user1 = new Person();
+
+
+        System.out.println(p1.getWelcome());
+        user1.setName(sc.next());
+        System.out.println(user1.getName() + p1.getIntro());
+        String s1 = sc.next();
+        System.out.println(user1.getName() + p1.getRobot(s1));
+        s1 = sc.nextLine();
+        System.out.println(user1.getName() + p1.getRobot(s1));
+        s1 = sc.nextLine();
+        System.out.println(user1.getName() + p1.getRobot(s1));
+        s1 = sc.nextLine();
+        System.out.println(user1.getName() + p1.getRobot(s1));
+        s1 = sc.nextLine();
+
+        if (s1 == "test me" || s1 == "quiz" || s1 == "tst") {
+            s1 = "test me";
+            System.out.println(user1.getName()); q.play();
+        }else{
+                System.out.println(user1.getName() + p1.getLit(s1));
+                String s2 = sc.next();
+                System.out.println(user1.getName() + p1.getGenre(s2));
+                String s3 = sc.next();
+                System.out.println(user1.getName() + p1.getGenreType(s3));
+            }
+
+/*
         Scanner sc = new Scanner(System.in);
         Parse parse = new Parse();
         Library library = new Library();
@@ -27,6 +60,9 @@ public class Main {
         user1.setTopThree(pca.getTopThree());
 
         chatBot.loopGeneraTitle(user1,pca,pca.getTopThree(), false);
+        */
+
     }
 
 }
+
