@@ -27,6 +27,7 @@ public class Main {
         user1.setTopThree(pca.getTopThree());
 
         chatBot.loopGeneraTitle(user1,pca,pca.getTopThree(), false);
+	System.out.println("test"); 
     }
 
 }
