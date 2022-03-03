@@ -1,5 +1,6 @@
 package com.company;
-import java.util.*;
+
+import java.util.ArrayList;
 
 public class Person {
     private String name;
@@ -7,11 +8,44 @@ public class Person {
     private String occupation;
     private String favoriteBook;
     private String favoriteGenera;
-    private String query;
+    private int [] pcaVector;
+    String [] generas = new String[] {"sci-fi","Romance","Action","Comedy", "Education","Classic","Horror"};
+    ArrayList<String> topThree = new ArrayList<>();
+    private int [] userVector = new int[generas.length];
     private ArrayList<Book> tempList = new ArrayList<Book>();
     private ArrayList<Book> permList = new ArrayList<Book>();
+    private ArrayList<Book> shoppingCart = new ArrayList<>();
 
+    public ArrayList<String> getTopThree() {
+        return topThree;
+    }
 
+    public void setTopThree(ArrayList<String> topThree) {
+        this.topThree = topThree;
+    }
+
+    public int[] getUserVector() {
+        return userVector;
+    }
+
+    public void setUserVector() {
+        for (int i = 0; i<generas.length; i++) {
+            if (favoriteGenera.equalsIgnoreCase(generas[i])) {
+                userVector[i] = 10;
+            }
+            else {
+                userVector[i] = 0;
+            }
+        }
+    }
+
+    public int[] getPcaVector() {
+        return pcaVector;
+    }
+
+    public void setPcaVector(int[] pcaVector) {
+        this.pcaVector = pcaVector;
+    }
 
     @Override
     public String toString() {
@@ -69,7 +103,6 @@ public class Person {
     public void setFavoriteGenera(String favoriteGenera) {
         this.favoriteGenera = favoriteGenera;
     }
-
     public ArrayList<Book> getTempList(){
         return tempList;
     }
@@ -78,6 +111,7 @@ public class Person {
     }
 
     public void updateTempList(Book b){
+        removeTempList(b); //Removes duplicates
         tempList.add(b);
     }
     public void removeTempList(Book b){
@@ -87,6 +121,7 @@ public class Person {
             }
         }
     }
+    //Once we have a working database we could pull the permanent list of all books user has borrowed
     public void updatePermList(Book b){
         permList.add(b);
     }
@@ -97,5 +132,6 @@ public class Person {
             }
         }
     }
+
 
 }
