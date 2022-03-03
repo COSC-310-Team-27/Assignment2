@@ -60,12 +60,9 @@ public class Library {
         bookList = getBookList();
         for (Book b:bookList) {
             if(b.getGenre() == genera) {
-                //System.out.println("match"+b.getGenre());
                 generaList.add(b);
             }
-
         }
-        //System.out.println(generaList);
         return  generaList;
     }
     //Return arrayList of books by specific author in library.
@@ -92,7 +89,7 @@ public class Library {
     public ArrayList<String> getTitleList(ArrayList<Book> books) {
         ArrayList<String> titles = new ArrayList<>();
         for (Book book :books) {
-            titles.add(book.getAuthor());
+            titles.add(book.getTitle());
         }
         return titles;
     }
@@ -122,12 +119,7 @@ public class Library {
         Book rand = bookList.get(randNum);
         return rand;
     }
-    //Returns a random book from arrayList of books passed to method, to caller.
-    public Book getTitleRandom(ArrayList<Book> books) {
-        int randNum = (int)(Math.random() * books.size());
-        Book rand = books.get(randNum);
-        return rand;
-    }
+
 
 
     //Tostring of a book at given index.
@@ -221,6 +213,3 @@ public class Library {
     }
 
 }
-
-
-

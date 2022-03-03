@@ -73,6 +73,8 @@ public class ChatBot {
 
 		Scanner sc = new Scanner(System.in);
 		boolean happy = false;
+		boolean addToCart = false;
+		boolean continueBrowsing = false;
 		int loopNum = 0;
 
 
@@ -83,8 +85,29 @@ public class ChatBot {
 			String reply = sc.next();
 			happy = testReaction(reply);
 			if(happy) {
-				System.out.print("That's great, are these books of any interest? \n"
-						+ library.listString(library.getGeneraList(s)));
+
+				System.out.println("That's great!?");
+				ArrayList<String> titles = library.getTitleList(library.getGeneraList(s));
+				for (String t:titles) {
+					System.out.println("Can i suggest: ");
+					System.out.println(t + " ??");
+					String reply2 = sc.next();
+					addToCart = testReaction(reply2);
+					if(addToCart) {
+						//TODO addtoCart()
+						System.out.println("added the book" + t + "to cart");
+						addToCart = false;
+						System.out.println("continue shopping?");
+						String reply3 = sc.next();
+						continueBrowsing = testReaction(reply3);
+						if(!continueBrowsing) {
+							break;
+						}
+
+					}
+
+				}
+						//library.getGeneraList(s);
 				break;
 			}
 			loopNum++;
