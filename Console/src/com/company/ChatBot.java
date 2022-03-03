@@ -51,7 +51,7 @@ public class ChatBot {
 		questions.add(new question("generic", 0, "What is your favourite book %s?"));
 		questions.add(new question("generic", 0, "What is your favourite genre %s?"));
 		//questions.add(new question("generic", 0, "What service can I provide? "));  //considering to add two more elements, two to indicate the statement(s) index(s)
-		questions.add(new question("loop", 0, "What else should I base my recommendation on? "));
+		questions.add(new question("loop", 0, "What should I base my recommendation on? "));
 		questions.add(new question("loop", 1, "Would you require additional service?"));
 		positiveFeedBack.add(p1);
 		positiveFeedBack.add(p2);
@@ -97,9 +97,9 @@ public class ChatBot {
 					addToCart = testReaction(reply2);
 					if(addToCart) {
 						person.chechOut.add(library.byTitle(t));
-						System.out.println("Added the book " + t + ", to cart");
+						System.out.println("Added the book " + t + ", to checkout list");
 						addToCart = false;
-						System.out.println("Continue shopping?");
+						System.out.println("Continue browsing?");
 						String reply3 = sc.next();
 						continueBrowsing = testReaction(reply3);
 						if(!continueBrowsing) {
@@ -132,12 +132,15 @@ public class ChatBot {
 				break;
 			}
 			case(2): {
-				System.out.println("Sorry about that, Searching...");
+				System.out.println("Ok, Searching...");
 				break;
 			}
 			case(3): {
-				System.out.println("Hmmmm...Searching...");
+				System.out.println("Ok, lets try, Searching...");
 				break;
+			}
+			default: {
+				System.out.println("Searching...");
 			}
 		}
 
