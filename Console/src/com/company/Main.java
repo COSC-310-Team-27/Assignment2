@@ -10,7 +10,7 @@ public class Main {
         Library library = new Library();
         ChatBot chatBot = new ChatBot();
         Person user1 = new Person();
-        System.out.println(chatBot.getStatement(0));
+       /* System.out.println(chatBot.getStatement(0));
         System.out.println(chatBot.getQuestion(0));
         user1.setName(parse.getWord());
         System.out.println(chatBot.getQuestion(1, user1.getName()));
@@ -18,7 +18,7 @@ public class Main {
         System.out.println(chatBot.getQuestion(2, user1.getName()));
         user1.setOccupation(parse.getWord());
         System.out.println(chatBot.getQuestion(3, user1.getName()));
-        user1.setFavoriteBook(sc.next());
+        user1.setFavoriteBook(sc.next());*/
         System.out.println(chatBot.getQuestion(4, user1.getName()));
         user1.setFavoriteGenera(sc.next());
         PCA pca = new PCA(user1.getUserVector()); //create pca object using user1 person object

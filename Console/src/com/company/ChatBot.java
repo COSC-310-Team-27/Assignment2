@@ -65,6 +65,7 @@ public class ChatBot {
 		for (String s:positiveFeedBack) {
 			if(s.contains(reply.toLowerCase())||reply.contains(s.toLowerCase())) {
 				happy = true;
+				return happy;
 			}
 		}
 		return happy;
@@ -77,9 +78,10 @@ public class ChatBot {
 		boolean addToCart = false;
 		boolean continueBrowsing = false;
 		int loopNum = 0;
-
-
 		for (String s: suggest) {
+			if(loopNum>suggest.size()) {
+				return;
+			}
 			getConsolation(loopNum);
 			System.out.println("Would you like to browse something in our ");
 			System.out.println(s + " section?");
@@ -95,7 +97,7 @@ public class ChatBot {
 					addToCart = testReaction(reply2);
 					if(addToCart) {
 						person.chechOut.add(library.byTitle(t));
-						System.out.println("added the book" + t + "to cart");
+						System.out.println("added the book" + t + " to cart");
 						addToCart = false;
 						System.out.println("continue shopping?");
 						String reply3 = sc.next();
@@ -122,26 +124,19 @@ public class ChatBot {
 		}
 	}
 
+
 	public void getConsolation(int loopNum) {
 		switch (loopNum) {
 			case(1): {
-				System.out.println("You sure are picky...");
+				System.out.println("Searching...");
 				break;
 			}
 			case(2): {
-				System.out.println("Sorry about that, maybe...");
+				System.out.println("Sorry about that, Searching...");
 				break;
 			}
 			case(3): {
-				System.out.println("Well then");
-				break;
-			}
-			case(4): {
-				System.out.println("Sorry...");
-				break;
-			}
-			case(5): {
-				System.out.println("Sorry about that, maybe i can recommend...");
+				System.out.println("Hmmmm...Searching...");
 				break;
 			}
 		}
