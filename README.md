@@ -13,11 +13,12 @@ https://github.com/COSC-310-Team-27/Assignment2/tree/main/ChatBotMobile
 browser(WIP): 
 https://github.com/COSC-310-Team-27/Assignment2/tree/main/ChatBotHTML
 
-Bot inteligently responds to natural language input and suggests generas based on 
+Bot intelligently responds to natural language input and suggests generas based on 
 Principle Component Analysis: 
 https://github.com/COSC-310-Team-27/Assignment2/blob/main/Python_PCA/PCA_encode_decode.ipynb
 and Euclidian proximity to nearest standard user vector: 
 https://github.com/COSC-310-Team-27/Assignment2/blob/main/Console/src/com/company/PCA.java 
+and a number of other features found in the console folder. For those who are more adventurous could partake in a quiz that will be more competitive in part 2.
 
 ## Getting Started
 
@@ -41,8 +42,17 @@ exe or appliication TBA
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+Bot will prompt user with generic questions to setup a user profile. After which user can choose from a number of features to checkout books. 
+Through the main class, users can invoke features such as: 
+(In quotations are the inputs the user needs to use to invoke the method)
+*Recommend by random title - "random title" 
+*Recommend by selecting a random book in a specific genre - "random book in genre"
+*Search by title - "title" 
+*Recommend random book by specific author - "author"
+*Recommend random book that has same length as inputted number - "pages" 
+*Recommend by PCA as aforementioned - "pca" 
+*Take a quiz - "quiz"
+
 ```
 code blocks for commands
 ```
