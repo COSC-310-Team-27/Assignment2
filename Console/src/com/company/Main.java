@@ -102,7 +102,7 @@ public class Main {
                 }
                 else{
                     //System.out.println(chatBot.getStatement(3));
-                    System.out.println(chatBot.getStatement(13));
+                    System.out.println(chatBot.getStatement(11));
                     System.out.println(ran.getBookDetails());
                     if(chatBot.testReaction(sc.nextLine())){ //
                         user1.updateTempList(ran);
