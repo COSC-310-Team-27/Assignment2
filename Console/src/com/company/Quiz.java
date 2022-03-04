@@ -63,9 +63,9 @@ public class Quiz {
                 score++;
             }
         }
-        sc.close();
+        //sc.close();
         System.out.println("You scored: " + score + "/5\n");
-        System.out.println("To retry the quiz reply: quiz, test me\nTo get book recommendations reply, recommendation, rec, book\n");
+        //System.out.println("To retry the quiz reply: quiz, test me\nTo get book recommendations reply, recommendation, rec, book\n");
     }
 
 }

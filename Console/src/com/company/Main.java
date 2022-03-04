@@ -11,7 +11,10 @@ public class Main {
         ChatBot chatBot = new ChatBot();
         Person user1 = new Person();
         Patterns p1 = new Patterns();
-
+        Quiz quiz = new Quiz();
+        PCA pca = new PCA(user1.getUserVector()); //create pca object using user1 person object
+        String in = "";
+        int gate;
         /*
         System.out.println(p1.getWelcome());
         user1.setName(sc.next());
@@ -32,16 +35,17 @@ public class Main {
         user1.setFavoriteBook(sc.nextLine());
         System.out.println(chatBot.getQuestion(4, user1.getName()));
         user1.setFavoriteGenera(sc.nextLine());
-        PCA pca = new PCA(user1.getUserVector()); //create pca object using user1 person object
+        /*
         user1.setUserVector();
         user1.setPcaVector(pca.getStandardUser());
         user1.setTopThree(pca.getTopThree());
         chatBot.loopGeneraTitle(user1,pca,pca.getTopThree(), false);
+        */
         System.out.println(chatBot.getQuestion(5, user1.getName()));
         System.out.println(chatBot.getStatement(1));
-        String in = sc.nextLine();
+        in = sc.nextLine();
 
-        int gate = 1;
+        gate = 1;
         while(gate == 1){
             //System.out.println("1");
 
@@ -93,10 +97,16 @@ public class Main {
             else if(in.equalsIgnoreCase("pages")){
                 System.out.println("Search by pages: ");
                 Book ran = library.byPages(sc.nextLine());
-                System.out.println(chatBot.getStatement(13));
-                System.out.println(ran.getBookDetails());
-                if(chatBot.testReaction(sc.nextLine())){ //
-                    user1.updateTempList(ran);
+                if(ran.getTitle() == null){
+                    System.out.println(chatBot.getStatement(9));
+                }
+                else{
+                    //System.out.println(chatBot.getStatement(3));
+                    System.out.println(chatBot.getStatement(13));
+                    System.out.println(ran.getBookDetails());
+                    if(chatBot.testReaction(sc.nextLine())){ //
+                        user1.updateTempList(ran);
+                    }
                 }
             }
             else if(in.equalsIgnoreCase("pca")){
@@ -108,6 +118,9 @@ public class Main {
                 user1.setTopThree(pca.getTopThree());
                 //System.out.println("pass2");
                 chatBot.loopGeneraTitle(user1,pca,pca.getTopThree(), false);
+            }
+            else if(in.equalsIgnoreCase("quiz")){
+                quiz.play();
             }
 
             else if(in.equalsIgnoreCase("getcartlist")){
