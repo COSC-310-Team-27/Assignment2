@@ -2,19 +2,21 @@ package com.company;
 import java.util.*;
 
 public class ChatBot {
-	/*	private String s1 = "Hello, my name is chat bot";
-        private String s2 = "May I suggest %s";
-        private String s3 = "Can I suggest something in our %s section?";
-        private String s4= "I'm sorry, maybe you could try %s ...?";
-        private String s5 = "Okay, let me find some %s books for you";
-        private String s6 = "I'm not sure I understand ...?";
-        private String q0 = "What is your name?";
-        private String q1 = "How old are you %s?";
-        private String q2 = "What is your occupation %s?";
-        private String q3 = "What is your favorite genera?";
-        private String q4 = "What is your favorite book?";
-        private String q5 = "What is your favorite genera?";
-        private String q6 = "What is your favorite book?";*/
+/*	private String s1 = "Hello, my name is chat bot";
+	private String s2 = "May I suggest %s";
+	private String s3 = "Can I suggest something in our %s section?";
+
+	private String s4= "I'm sorry, maybe you could try %s ...?";
+	private String s5 = "Okay, let me find some %s books for you";
+	private String s6 = "I'm not sure I understand ...?";
+
+	private String q0 = "What is your name?";
+	private String q1 = "How old are you %s?";
+	private String q2 = "What is your occupation %s?";
+	private String q3 = "What is your favorite genera?";
+	private String q4 = "What is your favorite book?";
+	private String q5 = "What is your favorite genera?";
+	private String q6 = "What is your favorite book?";*/
 	Library library = new Library();
 	private String p1 = "yes";
 	private String p2 = "yeah";
@@ -51,7 +53,6 @@ public class ChatBot {
 		//questions.add(new question("generic", 0, "What service can I provide? "));  //considering to add two more elements, two to indicate the statement(s) index(s)
 		questions.add(new question("loop", 0, "What should I base my recommendation on? "));
 		questions.add(new question("loop", 1, "Would you require additional service?"));
-		questions.add(new question("trivia", 0, "Or perhaps you'd like to try a fun trivia quiz? (Type yes to do trivia)"));
 		positiveFeedBack.add(p1);
 		positiveFeedBack.add(p2);
 		positiveFeedBack.add(p3);
@@ -87,18 +88,18 @@ public class ChatBot {
 			String reply = sc.next();
 			happy = testReaction(reply);
 			if(happy) {
-				System.out.println("That's great!");
+				System.out.println("That's great!?");
 				ArrayList<String> titles = library.getTitleList(library.getGeneraList(s));
 				for (String t:titles) {
 					System.out.println("Can i suggest: ");
-					System.out.println(t + "??");
+					System.out.println(t + " ??");
 					String reply2 = sc.next();
 					addToCart = testReaction(reply2);
 					if(addToCart) {
-						person.checkOut.add(library.byTitle(t));
-						System.out.println("Added the book " + t + ", to checkout list");
+						person.chechOut.add(library.byTitle(t));
+						System.out.println("added the book" + t + " to checkout list");
 						addToCart = false;
-						System.out.println("Continue browsing?");
+						System.out.println("continue browsing?");
 						String reply3 = sc.next();
 						continueBrowsing = testReaction(reply3);
 						if(!continueBrowsing) {
