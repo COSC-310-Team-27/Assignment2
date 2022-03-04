@@ -55,6 +55,11 @@ Markup : *Recommend by random title - "random title"
 *Recommend by PCA as aforementioned - "pca" 
 *Take a quiz - "quiz"
 
+ Markup : * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+          * Bullet list item 2
+
 ## Help
 
 Any advise for common problems or issues.
