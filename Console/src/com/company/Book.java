@@ -48,6 +48,8 @@ public class Book {
         return author;
     }
 
+    public int getPages(){ return pages; }
+
     public void setAuthor(String author) {
         this.author = author;
     }

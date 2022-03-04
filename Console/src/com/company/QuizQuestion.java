@@ -3,7 +3,7 @@ import java.lang.String;
 import java.util.*;
 
 
-public class QuizQuestion {
+public class quizQuestion {
     private String prompt;
     private ArrayList<String> options;
     private String answer;

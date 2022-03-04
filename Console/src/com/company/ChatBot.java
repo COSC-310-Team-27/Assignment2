@@ -5,11 +5,9 @@ public class ChatBot {
 	/*	private String s1 = "Hello, my name is chat bot";
         private String s2 = "May I suggest %s";
         private String s3 = "Can I suggest something in our %s section?";
-
         private String s4= "I'm sorry, maybe you could try %s ...?";
         private String s5 = "Okay, let me find some %s books for you";
         private String s6 = "I'm not sure I understand ...?";
-
         private String q0 = "What is your name?";
         private String q1 = "How old are you %s?";
         private String q2 = "What is your occupation %s?";
@@ -22,6 +20,7 @@ public class ChatBot {
 	private String p2 = "yeah";
 	private String p3 = "yep";
 	private String p4 = "yeet";
+	private String p5 = "sure";
 	private ArrayList<String> positiveFeedBack = new ArrayList<>();
 	private Person person;
 	private ArrayList<String> statements = new ArrayList<>();
@@ -52,10 +51,12 @@ public class ChatBot {
 		//questions.add(new question("generic", 0, "What service can I provide? "));  //considering to add two more elements, two to indicate the statement(s) index(s)
 		questions.add(new question("loop", 0, "What should I base my recommendation on? "));
 		questions.add(new question("loop", 1, "Would you require additional service?"));
+		questions.add(new question("trivia", 0, "Or perhaps you'd like to try a fun trivia quiz? (Type yes to do trivia)"));
 		positiveFeedBack.add(p1);
 		positiveFeedBack.add(p2);
 		positiveFeedBack.add(p3);
 		positiveFeedBack.add(p4);
+		positiveFeedBack.add(p5);
 
 	}
 	public boolean testReaction(String reply) {
@@ -63,6 +64,7 @@ public class ChatBot {
 		for (String s:positiveFeedBack) {
 			if(s.contains(reply.toLowerCase())||reply.contains(s.toLowerCase())) {
 				happy = true;
+				return happy;
 			}
 		}
 		return happy;
@@ -72,23 +74,47 @@ public class ChatBot {
 
 		Scanner sc = new Scanner(System.in);
 		boolean happy = false;
+		boolean addToCart = false;
+		boolean continueBrowsing = false;
 		int loopNum = 0;
-
-
 		for (String s: suggest) {
+			if(loopNum>suggest.size()) {
+				return;
+			}
 			getConsolation(loopNum);
-			System.out.println("Can i suggest: ");
-			System.out.println(s);
+			System.out.println("Would you like to browse something in our ");
+			System.out.println(s + " section?");
 			String reply = sc.next();
 			happy = testReaction(reply);
 			if(happy) {
-				System.out.print("That's great, are these books of any interest? \n"
-						+ library.listString(library.getGeneraList(s)));
-				break;
+				System.out.println("That's great!");
+				ArrayList<String> titles = library.getTitleList(library.getGeneraList(s));
+				for (String t:titles) {
+					System.out.println("Can i suggest: ");
+					System.out.println(t + "??");
+					String reply2 = sc.next();
+					addToCart = testReaction(reply2);
+					if(addToCart) {
+						person.checkOut.add(library.byTitle(t));
+						System.out.println("Added the book " + t + ", to checkout list");
+						addToCart = false;
+						System.out.println("Continue browsing?");
+						String reply3 = sc.next();
+						continueBrowsing = testReaction(reply3);
+						if(!continueBrowsing) {
+							return;
+						}
+					}
+				}
+			}
+			else {
+				//System.out.println("inner console");
+				//getConsolation(loopNum);
 			}
 			loopNum++;
 		}
 		if(!happy) {
+			//System.out.println("outter console");
 			getConsolation(loopNum);
 			System.out.println("");
 			ArrayList<String> finalOption = pca.remainingOptions(person.getTopThree());
@@ -96,24 +122,27 @@ public class ChatBot {
 
 		}
 	}
+
+
 	public void getConsolation(int loopNum) {
 		switch (loopNum) {
-			case(5): {
-				System.out.println("You sure are picky... but how about you go fuck yourself");
-			}
-			case(4): {
-				System.out.println("Sorry about that, maybe...");
-			}
-			case(3): {
-				System.out.println("Well then");
+			case(1): {
+				System.out.println("Searching...");
+				break;
 			}
 			case(2): {
-				System.out.println("Sorry...");
+				System.out.println("Ok, Searching...");
+				break;
 			}
-			case(1): {
-				System.out.println("Sorry about that, maybe i can recommend...");
+			case(3): {
+				System.out.println("Ok, lets try, Searching...");
+				break;
+			}
+			default: {
+				System.out.println("Searching...");
 			}
 		}
+
 
 	}
 	public String getQuestion(int i,String s) {
