@@ -46,6 +46,7 @@ exe or appliication TBA
              
 Bot will prompt user with generic questions to setup a user profile. After which user can choose from a number of features to checkout books. 
 Through the main class, users can invoke features such as: 
+
 (In quotations are the inputs the user needs to use to invoke the method)
 * Recommend by random title - "random title" 
 * Recommend by selecting a random book in a specific genre - "random book in genre"
