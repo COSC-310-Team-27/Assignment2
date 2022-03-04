@@ -42,13 +42,12 @@ exe or appliication TBA
 
 ### Executing program
 
-    Markup : ```javascript
-             ```
+
              
 Bot will prompt user with generic questions to setup a user profile. After which user can choose from a number of features to checkout books. 
 Through the main class, users can invoke features such as: 
 (In quotations are the inputs the user needs to use to invoke the method)
-*Recommend by random title - "random title" 
+Markup :*Recommend by random title - "random title" 
 *Recommend by selecting a random book in a specific genre - "random book in genre"
 *Search by title - "title" 
 *Recommend random book by specific author - "author"
