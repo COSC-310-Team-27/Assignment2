@@ -69,7 +69,7 @@ public class Library {
     public ArrayList<Book> getAuthorList(String author) {
         ArrayList<Book> authorList = new ArrayList<>();
         for (Book b:bookList) {
-            if(b.getAuthor() == author)
+            if(b.getAuthor().equalsIgnoreCase(author))
             {
                 authorList.add(b);
             }
@@ -77,7 +77,7 @@ public class Library {
         return  authorList;
     }
     //Return arrayList of strings of all authors in library.
-    //Specially made for a method that requires a list instead of arraylist
+    //Specially made for callers that requires a list instead of arraylist
     public String [] getAllGeneras() {
         String [] allgenres;
         ArrayList<Book> genres = new ArrayList<>();
@@ -114,11 +114,11 @@ public class Library {
         ArrayList<Book> generaList = getGeneraList(genera);
         int randNum = (int)(Math.random() * generaList.size());
         Book rand = new Book();
-        System.out.println(generaList.size());
+        //System.out.println(generaList.size());
         if (generaList.size()>0) {
             rand = generaList.get(randNum);
         }
-        System.out.println(rand.getBookDetails());
+        //System.out.println(rand.getBookDetails());
         return rand;
     }
     //Return random book written by author to caller.
@@ -193,13 +193,10 @@ public class Library {
                 temp.add(getBookList().get(i));
             }
         }
-        if(temp.size()>1){ //Necessary?
-            ran = (int) Math.floor(Math.random()*temp.size());
-            System.out.println(ran);
+        if(temp.size()>0){
+            ran = (int) Math.random()*temp.size();
+            //System.out.println(ran);
             b = temp.get(ran);
-        }
-        else if(temp.size() == 1){
-            b = temp.get(0);
         }
         return b;
     }
@@ -213,7 +210,7 @@ public class Library {
                 temp.add(getBookList().get(i));
             }
         }
-        if(temp.size()>0){ //Necessary?
+        if(temp.size()>0){
             ran = (int) (Math.random()*temp.size());
             b = temp.get(ran);
         }

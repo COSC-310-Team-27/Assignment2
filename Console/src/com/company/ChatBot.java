@@ -29,30 +29,32 @@ public class ChatBot {
 	private ArrayList<question> questions = new ArrayList<>();
 	//private ArrayList<String> questions = new ArrayList<>(Arrays.asList(q0,q1,q2,q3,q4,q5,q6));
 	public ChatBot(){
-		statements.add("Hello, my name is chat bot your personal library assistant");
+		statements.add("Hello, my name is chat bot your personal library assistant"); //0
 		statements.add("eg. Random recommendation, or by favourite book, or favourite genre. Or search for a book by title, page, author. Or set of books by author, genre, page.");
-		statements.add("By: ");
-		statements.add("I would recommend the following book(s): ");
-		statements.add("I found %d books by that title: ");
-		statements.add("I found %d books by that author: ");
-		statements.add("I found %d books in that genre: ");
-		statements.add("I found %d books of that length: ");
-		statements.add("Error, no by that title...");
-		statements.add("Error, no books by that author...");
-		statements.add("Error, no books in that genre...");
-		statements.add("Error, no books of that length...");
-		statements.add("Error, no books to return..."); //Variations: No book by that title, no books by that author, no books of that genre, no books of that length
+		statements.add("By: "); //2
+		statements.add("I would recommend the following book(s): "); //3
+		statements.add("I found %d books by that title: "); //4
+		statements.add("I found %d books by that author: "); //5
+		statements.add("I found %d books in that genre: "); //6
+		statements.add("I found %d books of that length: "); //7
+		statements.add("Error, no by that title..."); //8
+		statements.add("Error, no books by that author..."); //9
+		statements.add("Error, no books in that genre..."); //10
+		statements.add("Error, no books of that length..."); //11
+		statements.add("Error, no books to return..."); //12
 		//statements.add("Are you a first time user?");
 		//statements.add("Welcome back %s how may I help you today?"); no need to output example of services statement b/c user is not new.
-		statements.add("May I suggest %s");
-		questions.add(new question("generic", 0, "What is your name?"));
-		questions.add(new question("generic", 0, "How old are you %s?"));
-		questions.add(new question("generic", 0, "What is your occupation %s?"));
-		questions.add(new question("generic", 0, "What is your favourite book %s?"));
-		questions.add(new question("generic", 0, "What is your favourite genre %s?"));
+		statements.add("May I suggest %s(type yes to add to checkout, otherwise type no): "); //13
+		statements.add("Today you've checked out the following book(s): "); //14
+		statements.add("Book(s) successfully added to checkout!"); //15
+		questions.add(new question("generic", 0, "What is your name?")); //0
+		questions.add(new question("generic", 0, "How old are you %s?")); //1
+		questions.add(new question("generic", 0, "What is your occupation %s?")); //2
+		questions.add(new question("generic", 0, "What is your favourite book %s?")); //3
+		questions.add(new question("generic", 0, "What is your favourite genre %s?")); //4
 		//questions.add(new question("generic", 0, "What service can I provide? "));  //considering to add two more elements, two to indicate the statement(s) index(s)
-		questions.add(new question("loop", 0, "What should I base my recommendation on? "));
-		questions.add(new question("loop", 1, "Would you require additional service?"));
+		questions.add(new question("loop", 0, "What should I base my recommendation on? ")); //5
+		questions.add(new question("loop", 1, "Would you require additional service? (Type yes for more features)")); //6
 		positiveFeedBack.add(p1);
 		positiveFeedBack.add(p2);
 		positiveFeedBack.add(p3);
@@ -96,7 +98,8 @@ public class ChatBot {
 					String reply2 = sc.next();
 					addToCart = testReaction(reply2);
 					if(addToCart) {
-						person.checkOut.add(library.byTitle(t));
+						//person.checkOut.add(library.byTitle(t)); doesn't update tempList
+						person.updateTempList(library.byTitle(t));
 						System.out.println("added the book" + t + " to checkout list");
 						addToCart = false;
 						System.out.println("continue browsing?");
