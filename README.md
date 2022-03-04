@@ -42,6 +42,9 @@ exe or appliication TBA
 
 ### Executing program
 
+    Markup : ```javascript
+             ```
+             
 Bot will prompt user with generic questions to setup a user profile. After which user can choose from a number of features to checkout books. 
 Through the main class, users can invoke features such as: 
 (In quotations are the inputs the user needs to use to invoke the method)
@@ -52,10 +55,6 @@ Through the main class, users can invoke features such as:
 *Recommend random book that has same length as inputted number - "pages" 
 *Recommend by PCA as aforementioned - "pca" 
 *Take a quiz - "quiz"
-
-```
-code blocks for commands
-```
 
 ## Help
 
