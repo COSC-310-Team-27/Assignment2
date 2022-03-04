@@ -96,7 +96,7 @@ public class ChatBot {
 					String reply2 = sc.next();
 					addToCart = testReaction(reply2);
 					if(addToCart) {
-						person.chechOut.add(library.byTitle(t));
+						person.checkOut.add(library.byTitle(t));
 						System.out.println("added the book" + t + " to checkout list");
 						addToCart = false;
 						System.out.println("continue browsing?");
