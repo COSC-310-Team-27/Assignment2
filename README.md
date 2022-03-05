@@ -68,12 +68,12 @@ Contains all methods involving books, such as get random title, get random book 
 Contains statements and questions that are commonly used. Handles talking between user and bot for all methods apart from some methods in library.  
 
 ## PCA.java
-joel take the wheel
+currently we have a hard coded "standard user matrix whose collumns represent likely users and combinations of highly rated generas. when a user enters their favorite genera a "one-hot encoded" vector is compared with the standard user matrix by finding the nearest neighbor in euclidian space. this nearest neighbor is used to generate possible generas the user will like. in the future we hope to fully implement logic similair to the jupyter notebook to reccommend books based on higher dimentional data using pca encoding and decoding of the one-hot encoded vector mentioned above. See TODO in PCA class (header)
 
 ## quiz.java 
 
 ## parse.java
-
+parse is a class of methods that finds a certain required key element of the input string, it is currently not being utilized but will be useful in later editions of this software which we aim to make more intelligent by recognizing patterns and keys such as verbs and nouns in user input see TODO in getNoun()
 ## book.java
 Contains the title, author, number of pages, genre of a book. 
 
