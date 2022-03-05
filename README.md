@@ -1,6 +1,17 @@
 # Assignment2
 Part 1 of chat bot:
 
+[Table of Contents]
+
+# Description
+# Getting Started
+# Dependencies
+# Installing
+# Help
+# Authors
+# Version History
+# Acknowledgments
+
 ## Description
 
 Chat bot for online library book suggestion, 
@@ -13,11 +24,12 @@ https://github.com/COSC-310-Team-27/Assignment2/tree/main/ChatBotMobile
 browser(WIP): 
 https://github.com/COSC-310-Team-27/Assignment2/tree/main/ChatBotHTML
 
-Bot inteligently responds to natural language input and suggests generas based on 
+Bot intelligently responds to natural language input and suggests generas based on 
 Principle Component Analysis: 
 https://github.com/COSC-310-Team-27/Assignment2/blob/main/Python_PCA/PCA_encode_decode.ipynb
 and Euclidian proximity to nearest standard user vector: 
 https://github.com/COSC-310-Team-27/Assignment2/blob/main/Console/src/com/company/PCA.java 
+and a number of other features found in the console folder. For those who are more adventurous could partake in a quiz that will be more competitive in part 2.
 
 ## Getting Started
 
@@ -33,26 +45,67 @@ import numpy as np
 import matplotlib.pyplot as plt
 from autograd import grad 
 
+### Class structure
+## main.java
+Handles user input and bot outputs
+
+## patterns.java
+Hasn't been integrated, is supposed to handle user input and bot outputs among other functions. Was supposed to do spell-checking and auto-correct to some extent. 
+
+## person.java 
+Is a projection of a user's preferences and data. Holds user's name, favourite book and genre, age, and occupation. 
+
+## quizQuestion.java
+Pulls questions from question class and returns it to caller. As well as gets answer from caller
+
+## question.java
+Contains a question's contents and their affiliated genre. 
+
+## library.java
+Contains all methods involving books, such as get random title, get random book by specific genre, get random book by specific author, get specific title, get all books in a specific genre and etc. 
+
+## chatBot.java
+Contains statements and questions that are commonly used. Handles talking between user and bot for all methods apart from some methods in library.  
+
+## PCA.java
+currently we have a hard coded "standard user matrix whose collumns represent likely users and combinations of highly rated generas. when a user enters their favorite genera a "one-hot encoded" vector is compared with the standard user matrix by finding the nearest neighbor in euclidian space. this nearest neighbor is used to generate possible generas the user will like. in the future we hope to fully implement logic similair to the jupyter notebook to reccommend books based on higher dimentional data using pca encoding and decoding of the one-hot encoded vector mentioned above. See TODO in PCA class (header)
+
+## quiz.java 
+
+## parse.java
+parse is a class of methods that finds a certain required key element of the input string, it is currently not being utilized but will be useful in later editions of this software which we aim to make more intelligent by recognizing patterns and keys such as verbs and nouns in user input see TODO in getNoun()
+## book.java
+Contains the title, author, number of pages, genre of a book. 
+
 ### Installing
 
 run java.Main()
 
 exe or appliication TBA
-
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+
+             
+Bot will prompt user with generic questions to setup a user profile. After which user can choose from a number of features to checkout books. 
+Through the main class, users can invoke features such as: 
+
+(In quotations are the inputs the user needs to use to invoke the method)
+* Recommend by random title - "random title" 
+* Recommend by selecting a random book in a specific genre - "random book in genre"
+* Search by title - "title" 
+* Recommend random book by specific author - "author"
+* Recommend random book that has same length as inputted number - "pages" 
+* Recommend by PCA as aforementioned - "pca" 
+* Take a quiz - "quiz"
+
 
 ## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+List of limitations (Work in progress)
+-Spell checking
+-Cannot handle unexpected input types
+-Error handling
+
 
 ## Authors
 
@@ -72,10 +125,6 @@ Richardo Brown (10142529)
     * See [commit change]() or See [release history]()
 * 0.1
     * Initial Release
-
-## License
-
-NA
 
 ## Acknowledgments
 

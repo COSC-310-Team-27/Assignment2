@@ -8,7 +8,7 @@ public class quizQuestion {
     private ArrayList<String> options;
     private String answer;
 
-    public QuizQuestion(String prompt, String[] options, String answer) {
+    public quizQuestion(String prompt, String[] options, String answer) {
         this.prompt = prompt;
         this.options = new ArrayList<String>();
         this.answer = answer;
