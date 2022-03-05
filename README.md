@@ -2,8 +2,8 @@
 Part 1 of chat bot:
 
 [TOC]
-#Description
-#Getting Started
+## Description
+## Getting Started
 
 ## Header 2
 
