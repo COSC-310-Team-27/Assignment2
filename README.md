@@ -45,6 +45,38 @@ import numpy as np
 import matplotlib.pyplot as plt
 from autograd import grad 
 
+### Class structure
+main.java
+Handles user input and bot outputs
+
+patterns.java
+Hasn't been integrated, is supposed to handle user input and bot outputs among other functions. Was supposed to do spell-checking and auto-correct to some extent. 
+
+person.java 
+Is a projection of a user's preferences and data. Holds user's name, favourite book and genre, age, and occupation. 
+
+quizQuestion.java
+Pulls questions from question class and returns it to caller. As well as gets answer from caller
+
+question.java
+Contains a question's contents and their affiliated genre. 
+
+library.java
+Contains all methods involving books, such as get random title, get random book by specific genre, get random book by specific author, get specific title, get all books in a specific genre and etc. 
+
+chatBot.java
+Contains statements and questions that are commonly used. Handles talking between user and bot for all methods apart from some methods in library.  
+
+PCA.java
+joel take the wheel
+
+quiz.java 
+
+parse.java
+
+book.java
+Contains the title, author, number of pages, genre of a book. 
+
 ### Installing
 
 run java.Main()
