@@ -69,10 +69,11 @@ Through the main class, users can invoke features such as:
 
 ## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+List of limitations (Work in progress)
+-Spell checking
+-Cannot handle unexpected input types
+-Error handling
+
 
 ## Authors
 
