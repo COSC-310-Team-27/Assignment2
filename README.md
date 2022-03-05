@@ -1,6 +1,12 @@
 # Assignment2
 Part 1 of chat bot:
 
+[TOC]
+
+# Header 1
+
+## Header 2
+
 ## Description
 
 Chat bot for online library book suggestion, 
@@ -39,7 +45,6 @@ from autograd import grad
 run java.Main()
 
 exe or appliication TBA
-
 ### Executing program
 
 
