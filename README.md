@@ -1,11 +1,16 @@
 # Assignment2
 Part 1 of chat bot:
 
-[TOC]
-## Description
-## Getting Started
+[Table of Contents]
 
-## Header 2
+# Description
+# Getting Started
+# Dependencies
+# Installing
+# Help
+# Authors
+# Version History
+# Acknowledgments
 
 ## Description
 
@@ -87,10 +92,6 @@ Richardo Brown (10142529)
     * See [commit change]() or See [release history]()
 * 0.1
     * Initial Release
-
-## License
-
-NA
 
 ## Acknowledgments
 
