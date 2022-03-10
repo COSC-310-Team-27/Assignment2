@@ -1,13 +1,17 @@
 package com.example.chatbot2;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -41,6 +45,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.textViewName.setText(names.get(position).toString());
         holder.textViewMessage.setText(messages.get(position).toString());
         holder.imageViewAvatar.setImageResource((Integer) images.get(position));
+        if(names.get(position).equals("Bot")) {
+            holder.my_row_layout.setBackgroundColor(Color.parseColor("#3399FF"));
+        }
+        else {
+            holder.my_row_layout.setBackgroundColor(Color.parseColor("#33FF33"));
+        }
         System.out.println("onBindViewHolder");
     }
     @Override
@@ -53,11 +63,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         TextView textViewName, textViewMessage;
         ImageView imageViewAvatar;
+        ConstraintLayout my_row_layout;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+            my_row_layout = itemView.findViewById(R.id.my_row_layout);
             textViewName = itemView.findViewById(R.id.textViewName);
             textViewMessage = itemView.findViewById(R.id.textViewMessage);
             imageViewAvatar = itemView.findViewById(R.id.imageViewAvatar);
+
             System.out.println("MyViewHolder");
 
         }

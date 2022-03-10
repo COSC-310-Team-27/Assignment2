@@ -8,11 +8,11 @@ import java.util.Map;
 public class ChatBot {
 	private String greeting = "Hello, my name is chat bot";
 	private String q1 = "What is your name?";
-	private String q2 = "How old are you %s?"; //use svm or basic logistic regression for age, occupation, interests
+	private String q2 = "How old are you %s?";
 	private String q3 = "What is your occupation %s?";
 	private String q4 = "What are some of your hobbies and interests %s?";
-	private String q5 = "What is your favorite book?"; //use PCA for book and genera data
-	private String q6 = "What is your favorite genera?";
+	private String q5 = "What can i help you with %s?";
+	private String q6 = "What are some of your hobbies and interests %s?";
 	private String q7 = "...?";
 	private String q8 = "...?";
 	private String q9 = "...";
@@ -38,7 +38,11 @@ public class ChatBot {
 		if(questionNumber>1) {
 			n = person.getName();
 		}
-		q = askByName(questions.get(questionNumber),n);
+		if(questionNumber<questions.size())
+			q = askByName(questions.get(questionNumber),n);
+		else {
+			q = "I am out of questions";
+		}
 		questionNumber++;
 		return q;
 	}

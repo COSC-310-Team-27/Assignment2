@@ -1,12 +1,12 @@
 package com.example.chatbot2;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.graphics.Rect;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> names = new ArrayList<>();
     ArrayList<String> messages = new ArrayList<>();
     ArrayList<Integer> images = new ArrayList<>();
-
+    Drawable curved_back;
     MyAdapter myAdapter;
 
     CountDownTimer timer = new CountDownTimer(500,1) {
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         public void onFinish() {
             //Toast.makeText(MainActivity.this, "Finished delay", Toast.LENGTH_LONG).show();
             chatBot();
+            recyclerView.smoothScrollToPosition(myAdapter.getItemCount());
         }
     };
 
@@ -59,13 +60,11 @@ public class MainActivity extends AppCompatActivity {
         //recyclerView.scrollToPosition(myAdapter.getItemCount());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(myAdapter);
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
-        dividerItemDecoration.setDrawable(ContextCompat.getDrawable(MainActivity.this, R.drawable.divider));
-        recyclerView.addItemDecoration(dividerItemDecoration);
-
+        recyclerView.addItemDecoration(new DividerItemDecoration(MainActivity.this, DividerItemDecoration.VERTICAL));
         images.add(R.drawable.bot);
         names.add("Bot");
         messages.add(chatBot.getQuestion());
+
         //myAdapter.notifyDataSetChanged();
 
         btnMessage.setOnClickListener(new View.OnClickListener() {
@@ -75,12 +74,17 @@ public class MainActivity extends AppCompatActivity {
                 images.add(R.drawable.user);
                 names.add("User");
                 messages.add(m);
+                //recyclerView.setBackgroundColor(Color.GREEN);
+
                 myAdapter.notifyDataSetChanged();
+                recyclerView.smoothScrollToPosition(myAdapter.getItemCount());
+                //recyclerView.setBackgroundColor(Color.BLUE);
 
                 timer.start();
 
             }
         });
+
     }
 
     public void chatBot() {
@@ -88,5 +92,8 @@ public class MainActivity extends AppCompatActivity {
         names.add("Bot");
         messages.add(chatBot.getQuestion());
         myAdapter.notifyDataSetChanged();
+
+
     }
+
 }
