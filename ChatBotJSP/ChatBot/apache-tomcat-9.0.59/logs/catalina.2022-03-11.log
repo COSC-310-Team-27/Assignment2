@@ -1,0 +1,117 @@
+11-Mar-2022 10:21:49.985 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.59
+11-Mar-2022 10:21:50.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 21 2022 21:01:10 UTC
+11-Mar-2022 10:21:50.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.59.0
+11-Mar-2022 10:21:50.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+11-Mar-2022 10:21:50.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+11-Mar-2022 10:21:50.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+11-Mar-2022 10:21:50.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17.0.2
+11-Mar-2022 10:21:50.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.2+8-LTS-86
+11-Mar-2022 10:21:50.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+11-Mar-2022 10:21:50.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59
+11-Mar-2022 10:21:50.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59
+11-Mar-2022 10:21:50.086 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=c:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59/conf/logging.properties
+11-Mar-2022 10:21:50.087 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Mar-2022 10:21:50.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+11-Mar-2022 10:21:50.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+11-Mar-2022 10:21:50.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+11-Mar-2022 10:21:50.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=c:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59
+11-Mar-2022 10:21:50.089 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=c:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59
+11-Mar-2022 10:21:50.089 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=c:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59/temp
+11-Mar-2022 10:21:50.108 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+11-Mar-2022 10:21:50.108 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+11-Mar-2022 10:21:50.108 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+11-Mar-2022 10:21:50.137 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
+11-Mar-2022 10:21:51.018 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+11-Mar-2022 10:21:51.089 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1614] milliseconds
+11-Mar-2022 10:21:51.177 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+11-Mar-2022 10:21:51.177 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.59]
+11-Mar-2022 10:21:51.211 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\docs]
+11-Mar-2022 10:21:52.003 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\docs] has finished in [792] ms
+11-Mar-2022 10:21:52.003 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\examples]
+11-Mar-2022 10:21:53.602 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\examples] has finished in [1,599] ms
+11-Mar-2022 10:21:53.603 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\host-manager]
+11-Mar-2022 10:21:53.734 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\host-manager] has finished in [131] ms
+11-Mar-2022 10:21:53.735 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\manager]
+11-Mar-2022 10:21:53.918 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\manager] has finished in [184] ms
+11-Mar-2022 10:21:53.920 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\ROOT]
+11-Mar-2022 10:21:54.053 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\ROOT] has finished in [133] ms
+11-Mar-2022 10:21:54.105 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+11-Mar-2022 10:21:54.256 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3165] milliseconds
+11-Mar-2022 10:23:55.713 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.59
+11-Mar-2022 10:23:55.723 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 21 2022 21:01:10 UTC
+11-Mar-2022 10:23:55.723 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.59.0
+11-Mar-2022 10:23:55.723 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+11-Mar-2022 10:23:55.723 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+11-Mar-2022 10:23:55.723 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+11-Mar-2022 10:23:55.725 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17.0.2
+11-Mar-2022 10:23:55.725 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.2+8-LTS-86
+11-Mar-2022 10:23:55.725 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+11-Mar-2022 10:23:55.725 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59
+11-Mar-2022 10:23:55.725 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59
+11-Mar-2022 10:23:55.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=c:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59/conf/logging.properties
+11-Mar-2022 10:23:55.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Mar-2022 10:23:55.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+11-Mar-2022 10:23:55.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+11-Mar-2022 10:23:55.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+11-Mar-2022 10:23:55.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=c:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59
+11-Mar-2022 10:23:55.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=c:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59
+11-Mar-2022 10:23:55.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=c:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59/temp
+11-Mar-2022 10:23:55.748 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+11-Mar-2022 10:23:55.748 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+11-Mar-2022 10:23:55.748 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+11-Mar-2022 10:23:55.753 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
+11-Mar-2022 10:23:56.429 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+11-Mar-2022 10:23:56.492 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1251] milliseconds
+11-Mar-2022 10:23:56.558 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+11-Mar-2022 10:23:56.558 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.59]
+11-Mar-2022 10:23:56.574 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\docs]
+11-Mar-2022 10:23:57.240 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\docs] has finished in [666] ms
+11-Mar-2022 10:23:57.240 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\examples]
+11-Mar-2022 10:23:57.910 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\examples] has finished in [670] ms
+11-Mar-2022 10:23:57.910 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\host-manager]
+11-Mar-2022 10:23:57.999 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\host-manager] has finished in [89] ms
+11-Mar-2022 10:23:57.999 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\manager]
+11-Mar-2022 10:23:58.085 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\manager] has finished in [86] ms
+11-Mar-2022 10:23:58.086 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\ROOT]
+11-Mar-2022 10:23:58.144 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\ROOT] has finished in [58] ms
+11-Mar-2022 10:23:58.154 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+11-Mar-2022 10:23:58.265 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1772] milliseconds
+11-Mar-2022 10:25:22.854 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.59
+11-Mar-2022 10:25:22.864 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 21 2022 21:01:10 UTC
+11-Mar-2022 10:25:22.864 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.59.0
+11-Mar-2022 10:25:22.865 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+11-Mar-2022 10:25:22.865 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+11-Mar-2022 10:25:22.865 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+11-Mar-2022 10:25:22.865 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17.0.2
+11-Mar-2022 10:25:22.865 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.2+8-LTS-86
+11-Mar-2022 10:25:22.865 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+11-Mar-2022 10:25:22.865 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59
+11-Mar-2022 10:25:22.867 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59
+11-Mar-2022 10:25:22.915 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=c:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59/conf/logging.properties
+11-Mar-2022 10:25:22.916 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Mar-2022 10:25:22.916 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+11-Mar-2022 10:25:22.916 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+11-Mar-2022 10:25:22.916 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+11-Mar-2022 10:25:22.916 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=c:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59
+11-Mar-2022 10:25:22.916 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=c:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59
+11-Mar-2022 10:25:22.916 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=c:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59/temp
+11-Mar-2022 10:25:22.924 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+11-Mar-2022 10:25:22.924 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+11-Mar-2022 10:25:22.925 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+11-Mar-2022 10:25:22.935 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1l  24 Aug 2021]
+11-Mar-2022 10:25:23.726 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+11-Mar-2022 10:25:23.804 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1328] milliseconds
+11-Mar-2022 10:25:23.881 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+11-Mar-2022 10:25:23.881 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.59]
+11-Mar-2022 10:25:23.891 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\docs]
+11-Mar-2022 10:25:24.408 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\docs] has finished in [516] ms
+11-Mar-2022 10:25:24.408 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\examples]
+11-Mar-2022 10:25:25.285 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\examples] has finished in [877] ms
+11-Mar-2022 10:25:25.285 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\host-manager]
+11-Mar-2022 10:25:25.378 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\host-manager] has finished in [93] ms
+11-Mar-2022 10:25:25.378 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\manager]
+11-Mar-2022 10:25:25.434 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\manager] has finished in [56] ms
+11-Mar-2022 10:25:25.450 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\ROOT]
+11-Mar-2022 10:25:25.499 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\rmahi\Desktop\Development\com.example.ChatBot.ChatBot\apache-tomcat-9.0.59\webapps\ROOT] has finished in [49] ms
+11-Mar-2022 10:25:25.499 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+11-Mar-2022 10:25:25.592 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1791] milliseconds

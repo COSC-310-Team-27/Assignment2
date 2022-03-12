@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [11/Mar/2022:10:22:18 -0800] "GET /ChatBot_war_exploded/Images/owl.jpg HTTP/1.1" 404 794
+0:0:0:0:0:0:0:1 - - [11/Mar/2022:10:22:18 -0800] "GET /ChatBot_war_exploded/Images/owl.jpg HTTP/1.1" 404 794
+0:0:0:0:0:0:0:1 - - [11/Mar/2022:10:22:18 -0800] "GET /ChatBot_war_exploded/Images/owl.jpg HTTP/1.1" 404 794
+0:0:0:0:0:0:0:1 - - [11/Mar/2022:10:22:18 -0800] "GET /ChatBot_war_exploded/Images/owl.jpg HTTP/1.1" 404 794
+0:0:0:0:0:0:0:1 - - [11/Mar/2022:10:22:18 -0800] "GET /ChatBot_war_exploded/Images/owl.jpg HTTP/1.1" 404 794
+0:0:0:0:0:0:0:1 - - [11/Mar/2022:10:22:18 -0800] "GET /ChatBot_war_exploded/Images/owl.jpg HTTP/1.1" 404 794
